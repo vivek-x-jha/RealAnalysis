@@ -1,0 +1,155 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{Intro Real Analysis}
+\author{Rosenlicht}
+\date{April 2022}
+
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+
+\theoremstyle{theorem}
+\newtheorem{theorem}{Theorem}[section]
+
+\begin{document}
+	
+	\maketitle
+	\tableofcontents
+	
+	\section{Notions from Set Theory}
+		\subsection{Sets and Elements. Subsets}
+		
+		\subsection{Operations on Sets}
+		
+		\subsection{Functions}
+		
+		\subsection{Finite and Infinite Sets}
+	
+	\section{The Real Number System}
+		\subsection{The Field Properties}
+		
+		\subsection{Order}
+		
+		\subsection{The Least Upper Bound Property}
+		
+		\subsection{The existence of Square Roots}
+
+	
+	\section{Metric Spaces}
+		\subsection{Definition of Metric Spaces. Examples}
+			
+			\begin{definition}[Metric Space]
+				A Metric Space is an ordered pair $(E, d)$ where E is some set along with a metric function $d \colon E \times E \to \mathbb{R}$
+				 such that:
+				 \begin{enumerate}
+				 	\item \textbf{Identity of Indiscernibles:} $d(p,q) = 0 \Leftrightarrow p=q, \forall p,q \in E$
+				 	\item \textbf{Symmetry:} $d(p,q) = d(q,p), \forall p,q \in E$
+				 	\item \textbf{Subadditivity:} $d(p,q) \leq d(p,r) + d(r,q), \forall p,q,r \in E$
+				 \end{enumerate}
+			\end{definition}
+		
+			\begin{theorem}
+				Metric functions are non-negative
+			\end{theorem}
+			\begin{proof}
+				Let d be a a metric function with points p,q $\in$ E. So,\\
+				\begin{align*}
+					d(p,p) &\leq d(p,q) + d(q,p) \tag{Subadditivity}. \\
+					d(p,p) &\leq d(p,q) + d(p,q) \tag{Symmetry}. \\
+					d(p,p) &\leq 2 \cdot d(p,q). \\
+					0 &\leq 2 \cdot d(p,q) \tag{Identity of Indiscernibles}. \\
+					0 &\leq d(p,q). &&\qedhere
+				\end{align*}
+			\end{proof}
+
+		
+
+		\subsection{Open and Closed Sets}
+		
+		\subsection{Convergent Sequences}
+		
+		\subsection{Completeness}
+		
+		\subsection{Compactness}
+		
+		\subsection{Connectedness}
+	
+	\section{Continuous Functions}
+		\subsection{Definition of Continuity. Examples}
+		
+		\subsection{Continuity and Limits}
+		
+		\subsection{The Continuity of Rational Operations. Functions with values in $E^n$}
+		
+		\subsection{Continuous Functions on a Compact Metric Space}
+		
+		\subsection{Continuous Functions on a Connected Metric Space}
+		
+		\subsection{Sequences of Functions}
+	
+	\section{Differentiation}
+		\subsection{Definition of the Derivative}
+		
+		\subsection{Rules of Differentiation}		
+		
+		\subsection{The Mean Value Theorem}
+		
+		\subsection{Taylor's Theorem}	
+	
+	\section{Riemann Integration}
+		\subsection{Definition and Examples}
+		
+		\subsection{Linearity and Order Properties of the Integral}
+		
+		\subsection{Existence of the Integral}
+		
+		\subsection{The Fundamental Theorem of Calculus}
+		
+		\subsection{The Logarithmic and Exponential Functions}
+		
+		\subsection{Definition of Continuity. Examples}
+	
+	
+	\section{Interchange of Limit Operations}
+		\subsection{Integration and Differentiation of Sequences of Functions}
+		
+		\subsection{Infinite Series}
+		
+		\subsection{Power Series}
+		
+		\subsection{The Trigonometric Functions}
+		
+		\subsection{Differentiation under the Integral Sign}
+		
+		
+	\section{The Method of Successive Approximations}
+		\subsection{The Fixed Point Theorem}
+		
+		\subsection{The Simplest Case of the Implicit Function Theorem}
+		
+		\subsection{Existence and Uniqueness Theorems for Ordinary Differential Equations}
+	
+	
+	\section{Partial Differentiation}
+		\subsection{Definitions and Basic Properties}
+		
+		\subsection{Higher Derivatives}
+		
+		\subsection{The Implicit Function Theorem}
+	
+	
+	\section{Multiple Integrals}
+		\subsection{Riemann Integration on Closed Intervals of $E^n$. Examples and Basic Properties}
+		
+		\subsection{Existence of the Integral. Integration on Arbitrary Subsets of $E^n$. Volume}
+		
+		\subsection{Iterated Integrals}
+		
+		\subsection{Change of Variable}
+
+	
+\end{document}
