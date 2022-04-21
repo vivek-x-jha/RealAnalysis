@@ -8,12 +8,11 @@
 \usepackage{amsmath}
 \usepackage{amsthm}
 \usepackage{amssymb}
+\usepackage{bm}
 
-\theoremstyle{definition}
 \newtheorem{definition}{Definition}[section]
-
-\theoremstyle{theorem}
 \newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}{Corollary}[theorem]
 
 \begin{document}
 	
@@ -36,19 +35,19 @@
 		
 		\subsection{The Least Upper Bound Property}
 		
-		\subsection{The existence of Square Roots}
+		\subsection{The Existence of Square Roots}
 
 	
 	\section{Metric Spaces}
 		\subsection{Definition of Metric Spaces. Examples}
 			
 			\begin{definition}[Metric Space]
-				A Metric Space is an ordered pair $(E, d)$ where E is some set along with a metric function $d \colon E \times E \to \mathbb{R}$
+				A Metric Space is an ordered pair $(E, d)$ where $E$ is some set along with a metric function $d \colon E \times E \to \mathbb{R}$
 				 such that:
 				 \begin{enumerate}
-				 	\item \textbf{Identity of Indiscernibles:} $d(p,q) = 0 \Leftrightarrow p=q, \forall p,q \in E$
-				 	\item \textbf{Symmetry:} $d(p,q) = d(q,p), \forall p,q \in E$
-				 	\item \textbf{Subadditivity:} $d(p,q) \leq d(p,r) + d(r,q), \forall p,q,r \in E$
+				 	\item \textbf{Identity of Indiscernibles:} $d(p,q) = 0 \Leftrightarrow p=q, \hspace{2 mm} \forall p,q \in E$
+				 	\item \textbf{Symmetry:} $d(p,q) = d(q,p), \hspace{2 mm} \forall p,q \in E$
+				 	\item \textbf{Subadditivity:} $d(p,q) \leq d(p,r) + d(r,q), \hspace{2 mm} \forall p,q,r \in E$
 				 \end{enumerate}
 			\end{definition}
 		
@@ -56,18 +55,155 @@
 				Metric functions are non-negative
 			\end{theorem}
 			\begin{proof}
-				Let d be a a metric function with points p,q $\in$ E. So,\\
+				Let $d$ be a a metric function with points $p,q \in E$. So,
 				\begin{align*}
-					d(p,p) &\leq d(p,q) + d(q,p) \tag{Subadditivity}. \\
-					d(p,p) &\leq d(p,q) + d(p,q) \tag{Symmetry}. \\
-					d(p,p) &\leq 2 \cdot d(p,q). \\
-					0 &\leq 2 \cdot d(p,q) \tag{Identity of Indiscernibles}. \\
-					0 &\leq d(p,q). &&\qedhere
+					0 &= d(p,p) \tag{Identity of Indiscernibles}\\
+					  &= \dfrac{d(p,p)}{2}\\
+					  &\leq \dfrac{d(p,q) + d(q,p)}{2} \tag{Subadditivity}\\
+					  &= \dfrac{d(p,q) + d(p,q)}{2} \tag{Symmetry}\\
+					  &= 2 \cdot \dfrac{d(p,q)}{2}\\
+					  &= d(p,q) &&\qedhere
 				\end{align*}
 			\end{proof}
 
-		
+			\begin{theorem}
+				$d(p_1,p_n) \leq \sum\limits_{k=1}^{n-1} d(p_k,p_{k+1}), \hspace{2 mm} \forall p_1,\ldots,p_n \in E$
+			\end{theorem}
+			\begin{proof}
+				We show the above statement via Induction. Note the case for $n=2$ is trivial so we omit it: \\
+				Base case $(n=3)$
+				$$d(p_1,p_3) \leq d(p_1,p_2) + d(p_2,p_3) = \sum\limits_{k=1}^{3-1} d(p_k,p_{k+1})$$
+				Inductive Step $\left(n \longrightarrow n+1\right)$
+				$$d(p_1,p_{n+1}) \leq d(p_1,p_n) + d(p_n,p_{n+1}) 
+								 \leq \sum\limits_{k=1}^{n-1} d(p_k,p_{k+1}) + d(p_n,p_{n+1})
+								 = \sum\limits_{k=1}^{(n+1)-1} d(p_k,p_{k+1})$$
+			\end{proof}
 
+			\begin{theorem}
+				$|d(p,r) - d(q,r)| \leq d(p,q), \hspace{2 mm} \forall p,q,r \in E$
+			\end{theorem}
+			\begin{proof}
+				Let $p,q,r \in E$. Then:
+				\begin{align*}
+					d(q,r) &\leq d(q,p)+d(p,r) \tag{Subadditivity}\\
+					d(q,r) &\leq d(p,q)+d(p,r) \tag{Symmetry}\\
+					-d(q,r) &\geq -d(p,q)-d(p,r)\\
+					d(p,r)-d(q,r) &\geq -d(p,q)
+				\end{align*}
+				We also have:
+				\begin{align*}
+					d(p,r) &\leq d(p,q)+d(q,r) \tag{Subadditivity}\\
+					d(p,r)-d(q,r) &\leq d(p,q)
+				\end{align*}	
+				Which gives us:
+				$$-d(p,q) \leq d(p,r)-d(q,r) \leq d(p,q)$$
+				$$|d(p,r) - d(q,r)| \leq d(p,q)$$
+
+			\end{proof}
+
+			\begin{definition}[Dot Product]
+				The Dot Product of vectors $\bm{x}, \bm{y} \in \mathbf{R}^n$ is $$\bm{x} \cdot \bm{y} = \sum\limits_{i=1}^n x_i y_i$$
+			\end{definition}
+
+			\begin{definition}[Euclidean Norm]
+				The Euclidean norm of $\bm{x} \in \mathbf{R}^n$ is $$||\bm{x}|| = \sqrt{\sum\limits_{i=1}^n x_i^2} = \sqrt{\bm{x} \cdot \bm{x}}$$
+			\end{definition}
+
+			\begin{theorem}[Cauchy Schwarz Inequality]
+			\label{cauchy-schwarz}
+				$|\bm{x}\cdot\bm{y}| \leq ||\bm{x}||\cdot||\bm{y}||, \hspace{2 mm} \forall \bm{x}, \bm{y} \in \mathbb{R}^n$
+			\begin{proof}
+				Let $\bm{x}, \bm{y} \in \mathbb{R}^n$. Then,
+				\begin{align*}
+					||t \cdot \bm{y} + \bm{x}||^2 &\geq 0, \hspace{2 mm} \forall t \in \mathbb{R}^n\\
+					\sum\limits_{i=1}^n {(t \cdot y_i + x_i)}^2 &\geq 0\\
+					\sum\limits_{i=1}^n (t^2 \cdot y_i^2 + 2x_i y_i t+x_i^2) &\geq 0\\
+					t^2 \sum\limits_{i=1}^n y_i^2 + 2t \sum\limits_{i=1}^n x_i y_i + \sum\limits_{i=1}^n x_i^2 &\geq 0\\
+					t^2 ||\bm{y}||^2 + 2t (\bm{x}\cdot\bm{y}) + ||\bm{x}||^2 &\geq 0\\
+				\end{align*}
+				The above is a quadratic in $t$ that is non-negative. Therefore it must have a non-positive discriminant.
+				\begin{align*}
+					(2(\bm{x}\cdot\bm{y}))^2 - 4||\bm{y}||^2 ||\bm{x}||^2 &\leq 0\\
+					4(\bm{x}\cdot\bm{y})^2 - 4||\bm{y}||^2 ||\bm{x}||^2 &\leq 0\\
+					(\bm{x}\cdot\bm{y})^2 - ||\bm{y}||^2 ||\bm{x}||^2 &\leq 0\\
+					(\bm{x}\cdot\bm{y})^2 - (||\bm{x}|| \cdot ||\bm{y}||)^2 &\leq 0\\
+					(\bm{x}\cdot\bm{y})^2 &\leq (||\bm{x}|| \cdot ||\bm{y}||)^2\\
+					|\bm{x}\cdot\bm{y}| &\leq ||\bm{x}|| \cdot ||\bm{y}|| &&\qedhere
+				\end{align*}
+			\end{proof}
+			\end{theorem}
+
+			\begin{corollary}
+				The Euclidean Norm is Subadditive.
+			\end{corollary}
+			\begin{proof}
+				Let $\bm{x}, \bm{y} \in \mathbf{R}^n$. Then,
+				\begin{align*}
+					||\bm{x} + \bm{y}||^2 &= \sum\limits_{i=1}^n (x_i + y_i)^2\\
+										  &= \sum\limits_{i=1}^n (x_i^2 + 2x_i y_i + y_i^2)\\
+										  &= \sum\limits_{i=1}^n x_i^2 + 2 \sum\limits_{i=1}^n x_i y_i + \sum\limits_{i=1}^n y_i^2\\
+										  &= ||\bm{x}||^2 + 2 (\bm{x} \cdot \bm{y}) + ||\bm{y}||^2\\
+										  &\leq ||\bm{x}||^2 + 2 ||\bm{x}|| \cdot ||\bm{y}| + ||\bm{y}||^2 \tag{Cauchy Schwarz Inequality}\\
+										  &= (||\bm{x}|| + ||\bm{y}||)^2\\
+					  ||\bm{x} + \bm{y}|| &\leq ||\bm{x}|| + ||\bm{y}|| &&\qedhere
+				\end{align*}
+				
+			\end{proof}
+
+			\begin{theorem}
+			\label{euclidean metric space}
+				$\mathbb{R}^n$ along with $d(\bm{p},\bm{q}) = ||\bm{p}-\bm{q}||$ forms a Metric Space.
+			\end{theorem}
+			\begin{proof}
+				Let $\bm{p}, \bm{q} \in \mathbb{R}^n$ 
+				\item \textbf{Identity of Indiscernibles:} $d(\bm{p},\bm{p}) = ||\bm{p}-\bm{p}|| = ||\bm{0}|| = 0$
+				\item \textbf{Symmetry:} $d(\bm{p},\bm{q}) = ||\bm{p}-\bm{q}|| = ||\bm{q}-\bm{p}|| = d(\bm{q},\bm{p})$
+				\item \textbf{Subadditivity:}
+				\begin{align*}
+					d(\bm{p},\bm{q}) &= ||\bm{p}-\bm{q}||\\
+									 &= ||(\bm{p}-\bm{r}) + (\bm{r}-\bm{q})||\\
+									 &\leq ||(\bm{p}-\bm{r})|| + ||(\bm{r}-\bm{q})|| \tag{Subadditivity of $||\cdot||$}\\
+									 &= d(\bm{p},\bm{r}) + d(\bm{r},\bm{q}) &&\qedhere
+				\end{align*}
+			\end{proof}
+
+			\begin{corollary}
+				$\mathbb{R}$ along with $d(p, q) = |p - q|$ forms a Metric Space.
+			\end{corollary}
+			\begin{proof}
+				Let n = 1. Then by Theorem \ref{euclidean metric space} we obtain a metric space
+			\end{proof}
+
+			\begin{theorem}[Taxicab metric space]
+				\label{taxicab metric space}
+				Let E be some set along with 
+				\begin{equation*}
+					d(p, q)=\begin{cases}
+							  1 \quad & p \neq q \\
+							  0 \quad & p = q \\
+						 \end{cases}
+					\end{equation*}
+				Then $(E, d)$ forms a Metric Space.
+				\end{theorem}
+				\begin{proof}
+					Let $p, q, r \in E$ 
+					\item \textbf{Identity of Indiscernibles:} $d(p, p) = 0$
+					\item \textbf{Symmetry:} \\
+						Let $p \neq q$
+						$$d(p, q) = 1 = d(q, p)$$
+						Let $p=q$
+						$$d(p, q) = 0 = d(q, p)$$
+					\item \textbf{Subadditivity:}
+						\begin{equation*}
+							d(p, r) + d(r, q)=\begin{cases}
+									2 \quad & p \neq r \neq q \\
+									0 \quad & p = q = r \\
+									1 \quad &else
+								\end{cases}
+						\end{equation*}
+						Therefore we have $d(p, q) \leq d(p, r) + d(r, q)$
+
+				\end{proof}
 		\subsection{Open and Closed Sets}
 		
 		\subsection{Convergent Sequences}
