@@ -31,6 +31,187 @@
 	\section{The Real Number System}
 		\subsection{The Field Properties}
 		
+			\begin{definition}[Group]
+			\label{group}
+				A Group is a an ordered pair $(G, *)$ where $G$ is some non-empty set along with a closed binary operator $*\colon G \times G \to G$ s.t.:
+				\begin{enumerate}
+					\item \textbf{Associative:} $\forall x, y, z \in G: (x * y) * z = x * (y * z)$.
+					\item \textbf{Identity Element:} $\forall x \in G, \exists! i_G \in G: x * i_G = i_G * x = x$.
+					\item \textbf{Inverse Element:} $\forall x \in G, \exists! x^{-1} \in G: x * x^{-1} = x^{-1} * x = i_G$.
+				\end{enumerate}
+			\end{definition}
+
+			\begin{definition}[Abelian Group]
+			\label{abelian group}
+				An Abelian Group is a Commutative Group: \\
+				$$\forall x, y \in G: x * y = y * x$$
+			\end{definition}
+
+			\begin{definition}[Field]
+			\label{field}
+				A Field is an ordered triple $(\mathbb{F}, *, \circ)$ s.t.:
+				\begin{enumerate}
+					\item $(\mathbb{F}, *)$ and $(\mathbb{F}, \circ)$ form Abelian Groups with $0_\mathbb{F} = i_{(\mathbb{F}, *)}$ and $1_\mathbb{F} = i_{(\mathbb{F}, \circ)}$.
+					\item \textbf{Distributive Property:} $\forall x, y, z \in \mathbb{F}, x * (y \circ z) = (x * y) \circ (x * z)$.
+				\end{enumerate}
+			\end{definition}
+			
+			\begin{definition}[Real Numbers]
+			\label{real numbers}
+				$(\mathbb{R}, +, \cdot)$ forms a Field where:
+				\begin{enumerate}
+					\item \textbf{Addition:} $+\colon \mathbb{R} \times \mathbb{R} \to \mathbb{R}$, $i_\mathbb{R} = 0$. 
+					\item \textbf{Multiplication:} $\cdot \colon \mathbb{R} \times \mathbb{R} \to \mathbb{R}$, $i_\mathbb{R} = 1$, where 0 has no inverse element.
+				\end{enumerate}
+			\end{definition}
+
+			Some other common Fields are $(\mathbb{Q}, +, \cdot)$ and $(\mathbb{C}, +, \cdot)$. 
+			So far, these have all been infinite Fields, but one can have finite Fields as well.
+			The smallest possible finite Field is $(\{0_\mathbb{F}, 1_\mathbb{F} \}, *, \circ)$. Below are some immediate consequences of our algebraic structures:
+			\begin{enumerate}
+				\item For any Associative Closed Binary Operation, parantheses can be omitted:
+				$\cdot \colon S \times S \to S$ associative $\Rightarrow x \cdot y \cdot z = (x \cdot y) \cdot z = x \cdot (y \cdot z), \forall x, y, z \in S$.
+				
+				\item For any Abelian Group, the order of elements is immaterial: \\
+				$(G, \cdot)$  Abelian Group $\Rightarrow x \cdot y \cdot z = y \cdot x \cdot z = y \cdot z \cdot x = z \cdot y \cdot x, \forall x, y, z \in G$.
+				
+				\item For any Group, the equation $x \cdot y = z$ has a unique solution in $x$: \\
+				$(G, \cdot)$ Group $\Rightarrow \forall y, z \in G, \exists! x \in G: x \cdot y = z$.
+				\begin{proof}
+					Let $y, z \in (G, \cdot)$. \\
+					$\Rightarrow y^{-1} \in G$. \\
+					$\Rightarrow z \cdot y^{-1} \in G$. \\
+					$\Rightarrow (z \cdot y^{-1}) \cdot y = z \cdot (y^{-1} \cdot y)$. \\
+					$\Rightarrow (z \cdot y^{-1}) \cdot y = z \cdot i_G$. \\
+					$\Rightarrow (z \cdot y^{-1}) \cdot y = z$. \\
+					$\Rightarrow x = z \cdot y^{-1}$ is a solution to $x \cdot y = z$. \\
+					Let $w$ be some other solution to $x \cdot y = z$. \\
+					$\Rightarrow w \cdot y = z$. \\
+					$\Rightarrow (w \cdot y) \cdot y^{-1} = z \cdot y^{-1}$. \\
+					$\Rightarrow w \cdot (y \cdot y^{-1}) = z \cdot y^{-1}$. \\
+					$\Rightarrow w \cdot i_G = z \cdot y^{-1}$. \\
+					$\Rightarrow w = z \cdot y^{-1}$. \\
+					$\Rightarrow w = x$. \\
+					Therefore $ x = z \cdot y^{-1}$ is a unique solution to $x \cdot y = z$. \\		
+				\end{proof}
+
+				\item For any Group, the identity element is unique:
+				$$\forall x \in G, \exists ! i_G \in G: i_G \cdot x = x \cdot i_G = x$$
+				\begin{proof}
+					Let $(G, \cdot)$ be a Group with identity element $i_G$. \\
+					Let $y, z \in G$ s.t. $y = z$. \\
+					$\Rightarrow i_G = y \cdot y^{-1} = z \cdot y^{-1}$. \\
+					$\Rightarrow x = i_G$ is a unique solution to $x \cdot y = z$. \\
+				\end{proof}
+
+				\item For any Group, inverse elements are unique:
+				$$\forall x \in G, \exists ! x^{-1} \in G: x \cdot x^{-1} = x^{-1} \cdot x = i_G$$
+				\begin{proof}
+					Let $(G, \cdot)$ be a Group with identity element $i_G$. \\
+					Let $y, z \in (G, \cdot)$ s.t. $z = i_G$. \\
+					$\Rightarrow y^{-1} = i_G \cdot y^{-1} = z \cdot y^{-1}$. \\
+					$\Rightarrow x = y^{-1}$ is a unique solution to $x \cdot y = z$.
+				\end{proof}
+
+				\item For any Field, any element multiplied by the Zero element $0_{\mathbb{F}}$ is $0_{\mathbb{F}}$.
+				\begin{proof}
+					Let $x \in (\mathbb{F}, +, \cdot)$. \\
+					$\Rightarrow x \cdot 0_{\mathbb{F}} = x \cdot i_{(\mathbb{F}, +)} = x \cdot (i_{(\mathbb{F}, +)} + i_{(\mathbb{F}, +)}) = (x \cdot i_{(\mathbb{F}, +)}) + (x \cdot i_{(\mathbb{F}, +)})$. \\
+					Let $y = x \cdot i_{(\mathbb{F}, +)}$. \\
+					$\Rightarrow y = y + y$. \\
+					$\Rightarrow y + y^{-1} = (y + y) + y^{-1}$. \\
+					$\Rightarrow y + y^{-1} = y + (y + y^{-1})$. \\
+					$\Rightarrow i_{(\mathbb{F}, +)} = y + i_{(\mathbb{F}, +)}$. \\
+					$\Rightarrow i_{(\mathbb{F}, +)} = y$. \\
+					$\Rightarrow 0_{\mathbb{F}} = y$. \\
+					$\Rightarrow 0_{\mathbb{F}} = x \cdot 0_{\mathbb{F}}$. \\
+
+					$\Rightarrow 0_{\mathbb{F}} \cdot x = i_{(\mathbb{F}, +)} \cdot x = (i_{(\mathbb{F}, +)} + i_{(\mathbb{F}, +)}) \cdot x = (i_{(\mathbb{F}, +)} \cdot x) + (i_{(\mathbb{F}, +)} \cdot x)$. \\
+					Let $z = i_{(\mathbb{F}, +)} \cdot x$. \\
+					$\Rightarrow z = z + z$. \\
+					$\Rightarrow z + z^{-1} = (z + z) + z^{-1}$. \\
+					$\Rightarrow z + z^{-1} = z + (z + z^{-1})$. \\
+					$\Rightarrow i_{(\mathbb{F}, +)} = z + i_{(\mathbb{F}, +)}$. \\
+					$\Rightarrow i_{(\mathbb{F}, +)} = z$. \\
+					$\Rightarrow 0_{\mathbb{F}} = z$. \\
+					$\Rightarrow 0_{\mathbb{F}} = 0_{\mathbb{F}} \cdot x$. \\
+
+					$\Rightarrow x \cdot 0_{\mathbb{F}} = 0_{\mathbb{F}} \cdot x = 0_{\mathbb{F}}$.
+				\end{proof}
+				
+				\item For any Field, if the product of 2 elements is the Zero element, then atleast 1 factor must be the Zero element:
+				\begin{proof}
+					Let $x, y \in (\mathbb{F}, +, \cdot)$ s.t. $x, y \neq 0_{\mathbb{F}}$. \\
+					Case 1: $x = 0_{\mathbb{F}} \Rightarrow x \cdot y = 0_{\mathbb{F}} \cdot y = 0_{\mathbb{F}}$. \\
+					Case 2: $y = 0_{\mathbb{F}} \Rightarrow x \cdot y = x \cdot 0_{\mathbb{F}} = 0_{\mathbb{F}}$. \\
+				\end{proof}
+				\item For any Group, the inverse of the inverse element is the element itself.
+				\begin{proof}
+					Let $x \in (G, \cdot)$. \\
+					$\Rightarrow \exists ! x^{-1} \in G: x \cdot x^{-1} = i_G$ \\
+					$\Rightarrow \exists ! ({x^{-1}})^{-1} \in G: ({x^{-1}})^{-1} \cdot x^{-1} = i_G$. \\
+					$\Rightarrow ({x^{-1}})^{-1} = x$, since they are both the solution to same equation:
+					$$x \cdot y = z: y = x^{-1}, z = i_G$$
+				\end{proof}
+
+				\item For any Field, we can define negative numbers as $-x = -1_\mathbb{F} \cdot x = x \cdot -1_\mathbb{F}$, where $-1_\mathbb{F}$ is the inverse of $1_\mathbb{F}$ under $+$. \\
+				\begin{proof}
+					Let $x \in (\mathbb{F}, +, \cdot)$. \\
+					$\Rightarrow \exists !x^{-1} \in (\mathbb{F}, +): x^{-1} + x = 0_\mathbb{F}$. \\
+					Define $x^{-1} = -x$. \\
+					$\Rightarrow -x + x = 0_\mathbb{F}$. \\
+					
+					$\Rightarrow -1_\mathbb{F} \cdot x + x = -1_\mathbb{F} \cdot x + 1_\mathbb{F} \cdot x$. \\
+					$\Rightarrow -1_\mathbb{F} \cdot x + x = (-1_\mathbb{F} \cdot + 1_\mathbb{F}) \cdot x$. \\
+					$\Rightarrow -1_\mathbb{F} \cdot x + x = 0_\mathbb{F} \cdot x$. \\
+					$\Rightarrow -1_\mathbb{F} \cdot x + x = 0_\mathbb{F}$. \\
+
+					$\Rightarrow x \cdot -1_\mathbb{F} + x = x \cdot -1_\mathbb{F} + x \cdot 1_\mathbb{F}$. \\
+					$\Rightarrow x \cdot -1_\mathbb{F} + x = x \cdot (-1_\mathbb{F} \cdot + 1_\mathbb{F})$. \\
+					$\Rightarrow x \cdot -1_\mathbb{F} + x = x \cdot 0_\mathbb{F}$. \\
+					$\Rightarrow x \cdot -1_\mathbb{F} + x = 0_\mathbb{F}$. \\
+
+					$\Rightarrow -x = -1_\mathbb{F} \cdot x = x \cdot -1_\mathbb{F}$, since all three are solutions to same equation:
+					$$x + y = z: y = x, z = 0_\mathbb{F}$$
+				\end{proof}
+
+				\item For any Field, multiplying 2 negative numbers yields a positive number. \\
+				\begin{proof}
+					Let $x, y \in (\mathbb{F}, +, \cdot)$.
+					\begin{align*}
+						-x \cdot -y &= (-1_\mathbb{F}) \cdot x \cdot (-1_\mathbb{F}) \cdot y \\
+									&= (-1_\mathbb{F}) \cdot (-x \cdot  y) \\
+									&= -(-x \cdot  y) \\
+									&= x \cdot  y \\
+					\end{align*}
+				\end{proof}
+
+				\item For any Field, the additive inverse of a sum is the sum of the additive inverses. \\
+				\begin{proof}
+					Let $x, y \in (\mathbb{F}, +, \cdot)$.
+					\begin{align*}
+						-(x + y) &= (-1_\mathbb{F}) \cdot (x + y) \\
+									&= (-1_\mathbb{F}) \cdot x + (-1_\mathbb{F}) \cdot  y \\
+									&= (-x) + (-y)
+					\end{align*}
+				\end{proof}
+
+				\item For any Field, the multiplicative inverse of a product of non-zero elements is the product of the multiplicative inverses reversed. \\
+				\begin{proof}
+					Let $x, y \in (\mathbb{F}, +, \cdot)$ s.t. $x, y \neq 0_{\mathbb{F}}$. \\
+					$\Rightarrow x \cdot y \neq 0_\mathbb{F}$ \\
+					$\Rightarrow \exists ! x^{-1}, y^{-1}, (x \cdot y)^{-1} \in (\mathbb{F}, \cdot)$. \\
+					$\Rightarrow (x \cdot y)^{-1} \cdot (x \cdot y) = 1_\mathbb{F}$. \\
+					$\Rightarrow (x \cdot y)^{-1} \cdot (x \cdot y) \cdot y^{-1} = 1_\mathbb{F} \cdot y^{-1}$. \\
+					$\Rightarrow (x \cdot y)^{-1} \cdot x \cdot (y \cdot y^{-1}) = 1_\mathbb{F} \cdot y^{-1}$. \\
+					$\Rightarrow (x \cdot y)^{-1} \cdot x \cdot 1_\mathbb{F} = 1_\mathbb{F} \cdot y^{-1}$. \\
+					$\Rightarrow (x \cdot y)^{-1} \cdot x = y^{-1}$. \\
+					$\Rightarrow (x \cdot y)^{-1} \cdot x \cdot x^{-1} = y^{-1} \cdot x^{-1}$. \\
+					$\Rightarrow (x \cdot y)^{-1} \cdot 1_\mathbb{F} = y^{-1} \cdot x^{-1}$. \\
+					$\Rightarrow (x \cdot y)^{-1} = y^{-1} \cdot x^{-1}$. \\
+				\end{proof}
+			\end{enumerate}
+
 		\subsection{Order}
 		
 		\subsection{The Least Upper Bound Property}
@@ -42,63 +223,67 @@
 		\subsection{Definition of Metric Spaces. Examples}
 			
 			\begin{definition}[Metric Space]
-				A Metric Space is an ordered pair $(E, d)$ where $E$ is some set along with a metric function $d \colon E \times E \to \mathbb{R}$
-				 such that:
-				 \begin{enumerate}
-				 	\item \textbf{Identity of Indiscernibles:} $d(p,q) = 0 \Leftrightarrow p=q, \hspace{2 mm} \forall p,q \in E$
-				 	\item \textbf{Symmetry:} $d(p,q) = d(q,p), \hspace{2 mm} \forall p,q \in E$
-				 	\item \textbf{Subadditivity:} $d(p,q) \leq d(p,r) + d(r,q), \hspace{2 mm} \forall p,q,r \in E$
-				 \end{enumerate}
+				A Metric Space is an ordered pair $(M, d)$ where $M$ is some set along with a metric function $d \colon M^2 \to \mathbb{R}$ such that $\forall x, y, z \in M$:
+				\begin{enumerate}
+					\item \textbf{Symmetry:} $d(x, y) = d(y, x)$.
+					\item \textbf{Identity of Indiscernibles:} $d(x, y) = 0 \Leftrightarrow x=y$.
+					\item \textbf{Triangle Inequality:} $d(x, y) \leq d(x, z) + d(z, y)$.
+				\end{enumerate}
 			\end{definition}
 		
 			\begin{theorem}
-				Metric functions are non-negative
+				Metric functions are non-negative.
 			\end{theorem}
 			\begin{proof}
-				Let $d$ be a a metric function with points $p,q \in E$. So,
+				Let $x, y \in (M, d)$:
 				\begin{align*}
-					0 &= d(p,p) \tag{Identity of Indiscernibles}\\
-					  &= \dfrac{d(p,p)}{2}\\
-					  &\leq \dfrac{d(p,q) + d(q,p)}{2} \tag{Subadditivity}\\
-					  &= \dfrac{d(p,q) + d(p,q)}{2} \tag{Symmetry}\\
-					  &= 2 \cdot \dfrac{d(p,q)}{2}\\
-					  &= d(p,q) &&\qedhere
+					d(x, y) &= \dfrac{2 \cdot d(x, y)}{2}\\
+					&= \dfrac{d(x, y) + d(x, y)}{2}\\
+					&= \dfrac{d(x, y) + d(y, x)}{2} \tag{Symmetry}\\
+					&\geq \dfrac{d(x, x)}{2} \tag{Subadditivity}\\
+					&= 0 \tag{Identity of Indiscernibles} \\ &&\qedhere
 				\end{align*}
 			\end{proof}
 
-			\begin{theorem}
-				$d(p_1,p_n) \leq \sum\limits_{k=1}^{n-1} d(p_k,p_{k+1}), \hspace{2 mm} \forall p_1,\ldots,p_n \in E$
+			\begin{theorem}[General Triangle Inequality]
+			\label{general triangle inequality}
+				For any sequence of points in a metric space:
+				$$d(x_1,x_n) \leq \sum\limits_{k=1}^{n-1} d(x_k,x_{k+1})$$
 			\end{theorem}
 			\begin{proof}
-				We show the above statement via Induction. Note the case for $n=2$ is trivial so we omit it: \\
-				Base case $(n=3)$
-				$$d(p_1,p_3) \leq d(p_1,p_2) + d(p_2,p_3) = \sum\limits_{k=1}^{3-1} d(p_k,p_{k+1})$$
-				Inductive Step $\left(n \longrightarrow n+1\right)$
-				$$d(p_1,p_{n+1}) \leq d(p_1,p_n) + d(p_n,p_{n+1}) 
-								 \leq \sum\limits_{k=1}^{n-1} d(p_k,p_{k+1}) + d(p_n,p_{n+1})
-								 = \sum\limits_{k=1}^{(n+1)-1} d(p_k,p_{k+1})$$
+				Let $x_1,\ldots,x_n \in (M, d)$. \\
+				(Induction)\\
+				Base Case: $n=2$ is trivial and $n=3$ is satisfied by triangle inequality.\\
+				Inductive Hypothesis: Assume our statement holds for all n $\geq$ 2\\
+				Inductive Step: $\left(n \longrightarrow n+1\right)$
+				\begin{align*}
+					d(x_1,x_{n+1}) &\leq d(x_1,x_n) + d(x_n,x_{n+1})\\
+					&\leq \sum\limits_{k=1}^{n-1} d(x_k,x_{k+1}) + d(x_n,x_{n+1})\\
+					&= \sum\limits_{k=1}^{n} d(x_k,x_{k+1})\\
+				\end{align*}
 			\end{proof}
 
-			\begin{theorem}
-				$|d(p,r) - d(q,r)| \leq d(p,q), \hspace{2 mm} \forall p,q,r \in E$
+			\begin{theorem}[Reverse Triangle Inequality]
+			\label{reverse-triangle-inequality}
+			For any $x, y, z \in M$:
+			$$|d(x, z) - d(z, y)| \leq d(x, y)$$
 			\end{theorem}
 			\begin{proof}
-				Let $p,q,r \in E$. Then:
+				Let $x, y, z \in (M, d)$:
 				\begin{align*}
-					d(q,r) &\leq d(q,p)+d(p,r) \tag{Subadditivity}\\
-					d(q,r) &\leq d(p,q)+d(p,r) \tag{Symmetry}\\
-					-d(q,r) &\geq -d(p,q)-d(p,r)\\
-					d(p,r)-d(q,r) &\geq -d(p,q)
+					d(y, z) &\leq d(y, x) + d(x, z) \tag{Subadditivity}\\
+					d(z, y) &\leq d(x, y) + d(x, z) \tag{Symmetry}\\
+					-d(x, y) &\leq d(x, z) - d(z, y)
 				\end{align*}
 				We also have:
 				\begin{align*}
-					d(p,r) &\leq d(p,q)+d(q,r) \tag{Subadditivity}\\
-					d(p,r)-d(q,r) &\leq d(p,q)
+					d(x, z) &\leq d(x, y) + d(y, z) \tag{Subadditivity}\\
+					d(x, z) &\leq d(x, y) + d(z, y) \tag{Symmetry}\\
+					d(x, z) - d(z, y) &\leq d(x, y)
 				\end{align*}	
 				Which gives us:
-				$$-d(p,q) \leq d(p,r)-d(q,r) \leq d(p,q)$$
-				$$|d(p,r) - d(q,r)| \leq d(p,q)$$
-
+				$$-d(x, y) \leq d(x, z) - d(z, y) \leq d(x, y)$$
+				$$|d(x, z) - d(z, y)| \leq d(x, y)$$
 			\end{proof}
 
 			\begin{definition}[Dot Product]
@@ -111,18 +296,17 @@
 
 			\begin{theorem}[Cauchy Schwarz Inequality]
 			\label{cauchy-schwarz}
-				$|\bm{x}\cdot\bm{y}| \leq ||\bm{x}||\cdot||\bm{y}||, \hspace{2 mm} \forall \bm{x}, \bm{y} \in \mathbb{R}^n$
+				$$|\bm{x}\cdot\bm{y}| \leq ||\bm{x}||\cdot||\bm{y}||, \hspace{2 mm} \forall \bm{x}, \bm{y} \in \mathbb{R}^n$$
 			\begin{proof}
 				Let $\bm{x}, \bm{y} \in \mathbb{R}^n$. Then,
 				\begin{align*}
-					||t \cdot \bm{y} + \bm{x}||^2 &\geq 0, \hspace{2 mm} \forall t \in \mathbb{R}^n\\
+					||t \cdot \bm{y} + \bm{x}||^2 &\geq 0, \hspace{2 mm} \forall t \in \mathbb{R}\\
 					\sum\limits_{i=1}^n {(t \cdot y_i + x_i)}^2 &\geq 0\\
 					\sum\limits_{i=1}^n (t^2 \cdot y_i^2 + 2x_i y_i t+x_i^2) &\geq 0\\
 					t^2 \sum\limits_{i=1}^n y_i^2 + 2t \sum\limits_{i=1}^n x_i y_i + \sum\limits_{i=1}^n x_i^2 &\geq 0\\
 					t^2 ||\bm{y}||^2 + 2t (\bm{x}\cdot\bm{y}) + ||\bm{x}||^2 &\geq 0\\
-				\end{align*}
-				The above is a quadratic in $t$ that is non-negative. Therefore it must have a non-positive discriminant.
-				\begin{align*}
+					a t^2+bt+c &\geq 0\\
+					b^2-4ac &\le 0\\
 					(2(\bm{x}\cdot\bm{y}))^2 - 4||\bm{y}||^2 ||\bm{x}||^2 &\leq 0\\
 					4(\bm{x}\cdot\bm{y})^2 - 4||\bm{y}||^2 ||\bm{x}||^2 &\leq 0\\
 					(\bm{x}\cdot\bm{y})^2 - ||\bm{y}||^2 ||\bm{x}||^2 &\leq 0\\
@@ -150,62 +334,386 @@
 				
 			\end{proof}
 
-			\begin{theorem}
+			\begin{theorem}[Euclidean Metric Space]
 			\label{euclidean metric space}
-				$\mathbb{R}^n$ along with $d(\bm{p},\bm{q}) = ||\bm{p}-\bm{q}||$ forms a Metric Space.
+			$(\mathbb{R}^n, d)$ forms a Metric Space where $d(\bm{x}, \bm{y}) = ||\bm{x} - \bm{y}||$.
 			\end{theorem}
 			\begin{proof}
-				Let $\bm{p}, \bm{q} \in \mathbb{R}^n$ 
-				\item \textbf{Identity of Indiscernibles:} $d(\bm{p},\bm{p}) = ||\bm{p}-\bm{p}|| = ||\bm{0}|| = 0$
-				\item \textbf{Symmetry:} $d(\bm{p},\bm{q}) = ||\bm{p}-\bm{q}|| = ||\bm{q}-\bm{p}|| = d(\bm{q},\bm{p})$
+				Let $\bm{x}, \bm{y} \in \mathbb{R}^n$ .
+				\item \textbf{Symmetry:} $d(\bm{x},\bm{y}) = ||\bm{x}-\bm{y}|| = ||\bm{y}-\bm{x}|| = d(\bm{y},\bm{x})$
+				\item \textbf{Identity of Indiscernibles:} $d(\bm{x},\bm{x}) = ||\bm{x}-\bm{x}|| = ||\bm{0}|| = 0$
 				\item \textbf{Subadditivity:}
 				\begin{align*}
-					d(\bm{p},\bm{q}) &= ||\bm{p}-\bm{q}||\\
-									 &= ||(\bm{p}-\bm{r}) + (\bm{r}-\bm{q})||\\
-									 &\leq ||(\bm{p}-\bm{r})|| + ||(\bm{r}-\bm{q})|| \tag{Subadditivity of $||\cdot||$}\\
-									 &= d(\bm{p},\bm{r}) + d(\bm{r},\bm{q}) &&\qedhere
+					d(\bm{x},\bm{y}) &= ||\bm{x}-\bm{y}||\\
+									 &= ||(\bm{x}-\bm{z}) + (\bm{z}-\bm{y})||\\
+									 &\leq ||\bm{x}-\bm{z}|| + ||\bm{z}-\bm{y}|| \tag{Subadditivity of $||\cdot||$}\\
+									 &= d(\bm{x},\bm{z}) + d(\bm{z},\bm{y}) &&\qedhere
 				\end{align*}
 			\end{proof}
 
 			\begin{corollary}
-				$\mathbb{R}$ along with $d(p, q) = |p - q|$ forms a Metric Space.
+				$(\mathbb{R}, d)$ forms a Metric Space where $d(x, y) = |x - y|$.
 			\end{corollary}
 			\begin{proof}
 				Let n = 1. Then by Theorem \ref{euclidean metric space} we obtain a metric space
 			\end{proof}
 
-			\begin{theorem}[Taxicab metric space]
-				\label{taxicab metric space}
-				Let E be some set along with 
+			\begin{theorem}[Taxicab Metric Space]
+			\label{taxicab metric space}
+				Any nonempty set $M$ with the following metric function forms a Metric Space:
 				\begin{equation*}
-					d(p, q)=\begin{cases}
-							  1 \quad & p \neq q \\
-							  0 \quad & p = q \\
+					d(x, y)=\begin{cases}
+							  1 \quad & x \neq y \\
+							  0 \quad & x = y \\
 						 \end{cases}
 					\end{equation*}
-				Then $(E, d)$ forms a Metric Space.
 				\end{theorem}
 				\begin{proof}
-					Let $p, q, r \in E$ 
-					\item \textbf{Identity of Indiscernibles:} $d(p, p) = 0$
+					Let $x, y, z \in E$.
+					\item \textbf{Identity of Indiscernibles:} $d(x, x) = 0$.
 					\item \textbf{Symmetry:} \\
-						Let $p \neq q$
-						$$d(p, q) = 1 = d(q, p)$$
-						Let $p=q$
-						$$d(p, q) = 0 = d(q, p)$$
+						Let $x \neq y \Rightarrow d(x, y) = 1 = d(y, x)$. \\
+						Let $x=y \Rightarrow d(x, y) = 0 = d(y, x)$.
 					\item \textbf{Subadditivity:}
 						\begin{equation*}
-							d(p, r) + d(r, q)=\begin{cases}
-									2 \quad & p \neq r \neq q \\
-									0 \quad & p = q = r \\
+							d(x, z) + d(z, y)=\begin{cases}
+									2 \quad & x \neq z \neq y \\
+									0 \quad & x = y = z \\
 									1 \quad &else
 								\end{cases}
 						\end{equation*}
-						Therefore we have $d(p, q) \leq d(p, r) + d(r, q)$
+						Therefore we have $d(x, y) \leq d(x, z) + d(z, y)$
 
 				\end{proof}
 		\subsection{Open and Closed Sets}
+			Let $M$ be some Metric Space, $c \in M$, and $r \in \mathbf{R}^+$.
+			\begin{definition}[Open Ball]
+			\label{open ball}
+				Then the Open Ball in $M$ of center $c$ and radius $r$ is the subset of $M$ given by
+				$$B_r(c) = \{x \in M: d(x, c) < r \}$$
+			\end{definition}
 		
+			\begin{definition}[Closed Ball]
+			\label{closed ball}
+				Then the Closed Ball in $M$ of center $c$ and radius $r$ is the subset of $M$ given by
+				$$\bar{B}_r(c) = \{x \in M: d(x, c) \leq r \}$$
+			\end{definition}
+
+			\begin{theorem}
+				Open/Closed Balls in $\mathbb{R}$ are Open/Closed Intervals.
+			\end{theorem}
+			\begin{proof}
+				Let $c \in \mathbb{R}, r \in \mathbb{R}^+$.
+				\begin{align*}
+					B_r(c) &= \{ x \in M: d(x, c) < r \} \\
+						   &= \{ x \in \mathbb{R}: |x - c| < r \} \\
+						   &= \{ x \in \mathbb{R}: c - r < x < c + r \} \\
+						   &= (c - r, c + r) \\
+				\end{align*}
+				\begin{align*}
+					\bar{B}_r(c) &= \{ x \in M: d(x, c) \leq r \} \\
+						   &= \{ x \in \mathbb{R}: |x - c| \leq r \} \\
+						   &= \{ x \in \mathbb{R}: c - r \leq x \leq c + r \} \\
+						   &= [c - r, c + r] \\
+				\end{align*}
+			\end{proof}
+
+			\begin{definition}[Open Set]
+				\label{open set}
+				A subset S of a metric space M is open if every point in S is the center of some open ball contained in S:
+				$$\forall c \in S, \exists r \in \mathbb{R}^+: B_{r}(c) \subset S $$
+			\end{definition}
+
+			\begin{theorem}
+				In any metric space, an open ball is an open set.
+			\end{theorem}
+			\begin{proof} 
+				Define $S = B_{\delta}(p)$ s.t.  $p \in M, \delta \in \mathbb{R}^+$. \\
+				Let $c \in S$. \\
+				$\Rightarrow d(c, p) < \delta$. \\
+				Choose $r = \delta - d(c, p) \Rightarrow r \in \mathbb{R}^+$. \\
+				Suppose $x \in B_{r}(c)$. \\
+				$\Rightarrow d(x, c) < r$. \\
+				$\Rightarrow d(x, c) < \delta - d(c, p)$. \\
+				$\Rightarrow d(x, c) + d(c, p) < \delta$. \\
+				$\Rightarrow d(x, p) < \delta$. (Triangle Inequality) \\
+				$\Rightarrow x \in S$. \\
+				$\Rightarrow B_{r}(c) \subset S$.
+			\end{proof}
+
+			\begin{theorem}
+				For any metric space $(M, d)$:
+				\begin{enumerate}
+					\item $\varnothing$ is open
+					\item M is open
+					\item The union of an arbitrary number of open subsets is open: \\
+					$\{V_{k}\}_{k \in \mathbb{N}}$ open in M $\Rightarrow \bigcup_{k \in \mathbb{N}} V_{k}$ open in M. 
+					\item The intersection of a finite number of open subsets is open: \\
+					$\{V_{k}\}_{k=1}^{n}$ open in M $\Rightarrow \bigcap_{k=1}^{n} V_{k}$ open in M.
+				\end{enumerate}
+			\end{theorem}
+			\begin{proof} 
+				Let $(M, d)$ be a metric space:
+				\begin{enumerate}
+					\item Let $c \in \varnothing$. But $c \notin \varnothing$. So trivially, $\exists r \in \mathbb{R^{+}}: B_{r}(c) \subset \varnothing$.
+					\item Let $c \in M$. Suppose $x \in B_{r}(c) \Rightarrow d(x, c) < r \Rightarrow x \in M \Rightarrow B_{r}(c) \subset M$.
+					\item Suppose $\{V_{k}\}_{k \in \mathbb{N}}$ arbitrary collection of open subsets in M. \\
+						Let $c \in \bigcup_{k \in \mathbb{N}} V_{k}$. \\
+						$\Rightarrow c \in V_{k}$ for some $k = 1, \ldots, n$. \\
+						$\Rightarrow \exists r \in \mathbb{R^{+}}: B_{r}(c) \subset V_{k}$. \\
+						$\Rightarrow \exists r \in \mathbb{R^{+}}: B_{r}(c) \subset \bigcup_{k \in \mathbb{N}} V_{k}$, since any set is contained in its union.
+					\item Suppose $\{V_{k}\}_{k=1}^{n}$ finite collection of open subsets in M. Let $c \in \bigcap_{k=1}^{n} V_{k}$:
+					\begin{align*}
+						&\Rightarrow c \in V_{k}, \forall k = 1, \ldots, n. \\
+						&\Rightarrow \exists r_{k} \in \mathbb{R^{+}}: B_{r_{k}}(c) \subset V_{k}.
+					\end{align*}
+					Let $r = min(r_{1}, \ldots, r_{n})$. Suppose $x \in B_{r}(c)$:
+					\begin{align*}
+						&\Rightarrow d(x, c) < r. \\
+						&\Rightarrow d(x, c) < r_{1}, \ldots, d(x, c) < r_{n}. \\
+						&\Rightarrow x \in B_{r_{1}}(c), \ldots, x \in B_{r_{n}}(c). \\
+						&\Rightarrow x \in V_{1}, \ldots, x \in V_{n}. \\
+						&\Rightarrow x \in \bigcap_{k=1}^{n} V_{k}. \\
+						&\Rightarrow B_{r}(c) \subset \bigcap_{k=1}^{n} V_{k}.
+					\end{align*}					
+				\end{enumerate}
+			\end{proof}
+
+			\begin{definition}[Closed Set]
+				\label{closed set}
+				A subset $S$ of a metric space $(M, d)$ is closed if its complement $S^\complement$ is open in $M$.
+			\end{definition}
+
+			\begin{theorem}
+				In any metric space, a closed ball is a closed set.
+			\end{theorem}
+			\begin{proof} 
+				Define $S = \bar{B}_{\delta}(p)$ as some closed ball in $(M, d)$.
+				Let $c \in S^\complement$.
+				Then, $d(c, p) > \delta$.
+				Choosing $r = d(c, p) - \delta$, clearly $r > 0$.
+				Suppose $x \in B_{r}(c)$.
+				\begin{align*}
+					&\Rightarrow d(x, c) < r. \\
+					&\Rightarrow d(x, c) < d(c, p) - \delta. \\
+					&\Rightarrow d(c, p) - d(x, c) > \delta. \\
+					&\Rightarrow d(c, x) + d(x, p) - d(x, c) > \delta. \\
+					&\Rightarrow d(x, p) > \delta. \\
+					&\Rightarrow x \in S^\complement. \\
+					&\Rightarrow B_{r}(c) \subset S^\complement.
+				\end{align*}
+				So $S^\complement$ is open, making $S$ closed in $M$.
+			\end{proof}
+
+			\begin{theorem}
+				For any metric space $(M, d)$:
+				\begin{enumerate}
+					\item $\varnothing$ is closed
+					\item M is closed
+					\item The intersection of an arbitrary number of closed subsets is closed: \\
+					$\{V_{k}\}_{k \in \mathbb{N}}$ closed in M $\Rightarrow \bigcap_{k \in \mathbb{N}} V_{k}$ closed in M. 
+					\item The union of a finite number of closed subsets is closed: \\
+					$\{V_{k}\}_{k=1}^{n}$ closed in M $\Rightarrow \bigcup_{k=1}^{n} V_{k}$ closed in M.
+				\end{enumerate}
+			\end{theorem}
+			\begin{proof} 
+				Let $(M, d)$ be a metric space:
+				\begin{enumerate}
+					\item $\varnothing^\complement = M \Rightarrow \varnothing^\complement$ open $\Rightarrow\varnothing$ closed.
+					\item $M^\complement = \varnothing \Rightarrow M^\complement$ open $\Rightarrow M$ closed.
+					\item Suppose $\{V_{k}\}_{k \in \mathbb{N}}$ arbitrary collection of closed subsets in M. \\
+					$\Rightarrow \{V_{k}^\complement\}_{k \in \mathbb{N}}$ is an abitrary collection of open subsets in M. \\
+					$\Rightarrow \bigcup_{k \in \mathbb{N}} V_{k}^\complement$ is open in M. \\
+					$\Rightarrow (\bigcap_{k \in \mathbb{N}} V_{k})^\complement$ is open in M. \\
+					$\Rightarrow \bigcap_{k \in \mathbb{N}} V_{k}$ is closed in M. \\
+					\item Suppose $\{V_{k}\}_{k=1}^{n}$ finite collection of closed subsets in M. \\
+					$\Rightarrow \{V_{k}^\complement\}_{k=1}^{n}$ is a finite collection of open subsets in M. \\
+					$\Rightarrow \bigcap_{k=1}^{n} V_{k}^\complement$ is open in M. \\
+					$\Rightarrow (\bigcup_{k=1}^{n} V_{k})^\complement$ is open in M. \\
+					$\Rightarrow \bigcup_{k=1}^{n} V_{k}$ is closed in M. \\				
+				\end{enumerate}
+			\end{proof}
+
+			\begin{theorem}
+				Any singleton set is closed.
+			\end{theorem}
+			\begin{proof} 
+				Define $S = \{p\}$ as the singleton set $\forall p \in (M, d)$. \\
+				Let $c \in S^\complement = M / \{p\}$. \\
+				Then, $c \neq p$. \\
+				Choosing $r = d(c, p)$, clearly $r > 0$. \\
+				Suppose $x \in B_{r}(c)$.
+				\begin{align*}
+					&\Rightarrow d(x, c) < r. \\
+					&\Rightarrow d(x, c) < d(c, p). \\
+					&\Rightarrow d(c, p) - d(x, c) > 0. \\
+					&\Rightarrow d(p, c) - d(c, x) > 0. \\
+					&\Rightarrow | d(p, c) - d(c, x) | > 0. \\
+					&\Rightarrow d(p, x) > 0. \\
+					&\Rightarrow p \neq x. \\
+					&\Rightarrow x \in S^\complement. \\
+					&\Rightarrow B_{r}(c) \subset S^\complement.
+				\end{align*}
+				So $S^\complement$ is open, making $S$ closed in $M$.
+			\end{proof}
+
+			\begin{corollary}
+				Any finite subset of a metric space is closed.
+			\end{corollary}
+			\begin{proof}
+				Let $x_1, \ldots, x_n$ be a finite set of points in $M$. \\
+				$\Rightarrow \{x_1\}, \ldots, \{x_n\}$ all closed singleton sets in $M$. \\
+				$\Rightarrow \bigcup_{k=1}^{n} \{x_k\}$ closed in $M$. \\
+				$\Rightarrow \{ x_1, \ldots, x_n \}$ closed in $M$.
+			\end{proof}
+
+			\begin{theorem}
+				Any sphere in a metric space is closed.
+			\end{theorem}
+			\begin{proof} 
+				Define sphere of radius $r \in \mathbb{R}^+$ centered as:
+				\begin{align*}
+					S &= \{x \in M: d(x, c) = r \} \\
+					  &= \{x \in M: d(x, c) \leq r \} \cap \{x \in M: d(x, c) \geq r \} \\
+					  &= \{x \in M: d(x, c) \leq r \} \cap \{x \in M: d(x, c) < r \}^\complement \\
+					S  &= \bar{B}_{r}(c)  \cap B_{r}(c)^\complement
+				\end{align*}
+				Note, the closed ball $\bar{B}_{r}(c)$ is closed, and $B_{r}(c)^{\complement}$ is closed since its complement ${B_{r}(c)^{\complement}}^{\complement} = B_{r}(c)$  is the open ball, an open set.
+				The finite intersection of closed sets is closed, so $S$ is closed in $M$.
+			\end{proof}
+			\begin{theorem}
+				Any half-interval is neither open nor closed.
+			\end{theorem}
+			\begin{proof} 
+				Let $a, b \in \mathbb{R}, a < b$. \\
+				Define $S = [a, b)$ as a half-interval on $\mathbb{R}$. \\
+				Let $r > 0$. \\
+				$\Rightarrow a - r < a$. \\
+				$\Rightarrow a - r < min(S)$. \\
+				$\Rightarrow a - r \notin S$. \\
+				$\Rightarrow \nexists r \in \mathbb{R}^{+}: B_{r}(a) = (a - r, a + r) \subset S$. \\
+				$\Rightarrow S$ is not open in $\mathbb{R}$. \\
+				$\Rightarrow [b, \infty)$ is not open in $\mathbb{R}$ by same logic.\\
+				$\Rightarrow S^\complement = (-\infty, a) \cup [b, \infty)$ is not open in $\mathbb{R}$ by same logic.\\
+				$\Rightarrow S$ is not closed in $\mathbb{R}$.
+			\end{proof}
+
+			\begin{theorem}
+				Any subspace of Euclidean space with a strictly bounded component is open. So, $\forall a \in \mathbb{R}, k \in \{ 1, \ldots, n \}$: 
+				$\{ x \in \mathbb{R}^n: x_k < a \}$ and $\{ x \in \mathbb{R}^n: x_k > a \}$ are open in $\mathbb{R}^n$.
+			\end{theorem}
+			\begin{proof} 
+				Let $a \in \mathbb{R}$, and $k \in \{ 1, \ldots, n \}$. \\
+				Define $S = \{ x \in \mathbb{R}^n: x_k < a \}$ and $S' = \{ x \in \mathbb{R}^n: x_k > a \}$. \\
+				Let $c \in S$ and $p \in S'$. \\
+				$\Rightarrow c_k < a$ and $p_k > a$. \\
+				Choose $r = a - c_k$ and $\delta = p_k - a$ $\Rightarrow$ $r, \delta > 0$. \\
+				Suppose $x \in B_{r}(c)$ and $y \in B_{\delta}(p)$. \\
+				$\Rightarrow d(x, c) < r$ and $d(y, p) < \delta$. \\
+				$\Rightarrow d(x, c) < a - c_k$ and $d(y, p) < p_k - a$. \\
+				$\Rightarrow || x - c || < a - c_k$ and $|| y - p || < p_k - a$. \\
+				$\Rightarrow \sqrt{\sum_{k} (x_k - c_k)^2} <  a - c_k$ and $\sqrt{\sum_{k} (y_k - p_k)^2} < p_k - a$. \\
+				$\Rightarrow \sqrt{(x_k - c_k)^2} <  a - c_k$ and $\sqrt{(y_k - p_k)^2} < p_k - a$. \\
+				$\Rightarrow | x_k - c_k | <  a - c_k$ and $| y_k - p_k | <  p_k - a$. \\
+				$\Rightarrow x_k - c_k <  a - c_k$ and $p_k - y_k < p_k - a$ \\
+				$\Rightarrow x_k <  a$ and $y_k >  a$. \\
+				$\Rightarrow x \in S$ and $y \in S'$. \\
+				$\Rightarrow B_{r}(c) \subset S$ and $B_{\delta}(p) \subset S'$.
+			\end{proof}
+
+			\begin{theorem}
+				Any subspace of Euclidean space with a weakly bounded component is closed. So, $\forall a \in \mathbb{R}, k \in \{ 1, \ldots, n \}$: 
+				$\{ x \in \mathbb{R}^n: x_k \leq a \}$ and $\{ x \in \mathbb{R}^n: x_k \geq a \}$ are closed in $\mathbb{R}^n$.
+			\end{theorem}
+			\begin{proof} 
+				Let $a \in \mathbb{R}$, and $k \in \{ 1, \ldots, n \}$. \\
+				Define $S = \{ x \in \mathbb{R}^n: x_k \leq a \}$ and $S' = \{ x \in \mathbb{R}^n: x_k \geq a \}$. \\
+				$\Rightarrow S^\complement = \{ x \in \mathbb{R}^n: x_k > a \}$ and $S'^\complement = \{ x \in \mathbb{R}^n: x_k < a \}$. \\
+				$\Rightarrow S^\complement, S'^\complement$ are open in $\mathbb{R}^n$. \\
+				$\Rightarrow S, S'$ are closed in  $\mathbb{R}^n$.
+			\end{proof}
+
+			\begin{definition}[Open/Closed Intervals in $\mathbb{R}^n$]
+				\label{open closed intervals}
+				Let $a_1, \ldots, a_n, b_1, \ldots b_n \in \mathbb{R}$.
+				For $a_1 < b_1, \ldots, a_n < b_n$, the open interval in $\mathbb{R}^n$ is:
+				$$ \{ x \in \mathbb{R}^n: a_k < x_k < b_k, \forall k \in \{ 1, \ldots, n \} \}$$
+				For $a_1 \leq b_1, \ldots, a_n \leq b_n$, the closed interval in $\mathbb{R}^n$ is:
+				$$ \{ x \in \mathbb{R}^n: a_k \leq x_k \leq b_k, \forall k \in \{ 1, \ldots, n \} \}$$
+			\end{definition}
+
+			\begin{theorem}
+				Any open/closed interval in Euclidean space is open/closed set.
+			\end{theorem}
+			\begin{proof} 
+				Define $S = \{ x \in \mathbb{R}^n: a_k < x_k < b_k, \forall k \in \{ 1, \ldots, n \} \}$. \\
+				$\Rightarrow S = \bigcap_{k=1}^{n} \{ x \in \mathbb{R}^n: a_k < x_k < b_k \}$. \\
+				$\Rightarrow S = (\bigcap_{k=1}^{n} \{ x \in \mathbb{R}^n: x_k > a_k \}) \cap (\bigcap_{k=1}^{n} \{ x \in \mathbb{R}^n: x_k < b_k \})$. \\
+				$\Rightarrow S$ is open, since it is the finite intersection of ($2n$) open sets. \\
+
+				Define $S' = \{ x \in \mathbb{R}^n: a_k \leq x_k \leq b_k, \forall k \in \{ 1, \ldots, n \} \}$. \\
+				$\Rightarrow S' = \bigcap_{k=1}^{n} \{ x \in \mathbb{R}^n: a_k \leq x_k \leq b_k \}$. \\
+				$\Rightarrow S' = (\bigcap_{k=1}^{n} \{ x \in \mathbb{R}^n: x_k \geq a_k \}) \cap (\bigcap_{k=1}^{n} \{ x \in \mathbb{R}^n: x_k \leq b_k \})$. \\
+				$\Rightarrow S'$ is closed, since it is the finite intersection of ($2n$) closed sets.
+			\end{proof}
+
+			\begin{definition}[Bounded]
+				\label{bounded}
+				A subset $S$ of a metric space $M$ is bounded if it is contained in some ball.
+			\end{definition}
+
+			\begin{theorem}
+				Any open/closed interval in Euclidean space is bounded.
+			\end{theorem}
+			\begin{proof} 
+				Let $a, b \in \mathbb{R}^n$ s.t. $a \neq b$. \\
+				Define $S = \{ x \in \mathbb{R}^n: a_k \leq x_k \leq b_k, \forall k \in \{ 1, \ldots, n \} \}$. \\
+				Choose $r = d(b, a) > 0$. \\
+				Let $x \in S$. \\
+				$\Rightarrow 0 \leq x_k - a_k \leq b_k - a_k$. \\
+				$\Rightarrow (x_k - a_k)^2 \leq (b_k - a_k)^2$. \\
+				$\Rightarrow \sum \limits_{k=1}^n (x_k - a_k)^2 \leq \sum \limits_{k=1}^n (b_k - a_k)^2$. \\
+				$\Rightarrow \sqrt{\sum \limits_{k=1}^n (x_k - a_k)^2} \leq \sqrt{\sum \limits_{k=1}^n (b_k - a_k)^2}$. \\
+				$\Rightarrow ||x - a|| \leq ||b - a||$. \\
+				$\Rightarrow d(x, a) \leq d(b, a)$. \\
+				$\Rightarrow d(x, a) \leq r$. \\
+				$\Rightarrow x \in \bar{B}_r(a)$. \\
+				$\Rightarrow S \subset \bar{B}_r(a)$. \\
+
+				Define $S' = \{ x \in \mathbb{R}^n: a_k < x_k < b_k, \forall k \in \{ 1, \ldots, n \} \}$. \\
+				$\Rightarrow S' \subset S$. \\
+				$\Rightarrow S' \subset \bar{B}_r(a)$.
+			\end{proof}
+
+			\begin{theorem}
+				The union of a finite collection of bounded subsets of a metric space is bounded.
+			\end{theorem}
+			\begin{proof}
+				Suppose $V_1, \ldots, V_n$ are bounded subsets in $M$. \\
+				Let $c_1 \in V_1, \ldots, c_n \in V_n$. \\
+				$\Rightarrow \exists r_1, \ldots, r_n \in \mathbb{R}^+$ s.t. $V_{k} \subset \bar{B}_{r_k}(c_k), \forall k = 1, \ldots, n$. \\
+				Let $x \in \bigcup_{k=1}^{n} V_k$. \\
+				$\Rightarrow x \in V_k$ for some $k = 1, \ldots, n$. \\
+				$\Rightarrow x \in \bar{B}_{r_k}(c_k)$. \\
+				$\Rightarrow \bigcup_{k=1}^{n} V_k \subset  \bar{B}_{r_k}(c_k)$.
+			\end{proof}
+
+			\begin{theorem}
+				A nonempty closed subset of $\mathbb{R}$, if it is bounded from above has a greatest element
+				and if it is bounded from below has a least element.
+			\end{theorem}
+			\begin{proof}
+				Let $S \subset \mathbb{R}, S \neq \varnothing$. \\
+				Suppose S is closed in $\mathbb{R}$ and bounded above. \\
+				Let $c = sup(S)$. \\
+				With an eye to contradict, assume $c \notin S$. \\
+				$\Rightarrow c \in S^\complement$. \\
+				$\Rightarrow \exists r \in \mathbb{R}^+$ s.t. $B_r(c) \subset S^\complement$, since $S^\complement$ open in $\mathbb{R}$. \\
+				Then no element in S is greater than $c - r$. \\
+				$\Rightarrow c - r$ is an upper bound for $S$. \\
+				This must be a contradictions, so $c \in S$.
+			\end{proof}
+
 		\subsection{Convergent Sequences}
 		
 		\subsection{Completeness}
@@ -286,6 +794,7 @@
 		\subsection{Iterated Integrals}
 		
 		\subsection{Change of Variable}
+
 
 	
 \end{document}
