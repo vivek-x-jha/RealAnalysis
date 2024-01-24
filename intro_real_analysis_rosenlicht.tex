@@ -223,7 +223,7 @@
 		\subsection{Definition of Metric Spaces. Examples}
 			
 			\begin{definition}[Metric Space]
-				A Metric Space is an ordered pair $(M, d)$ where $M$ is some set along with a metric function $d \colon M^2 \to \mathbb{R}$ such that $\forall x, y, z \in M$:
+				A Metric Space is an ordered pair $(M, d)$ where $M$ is some set along with a metric function $d \colon M^2 \to \mathbb{R}$ such that $\forall x, y, z \in (M, d)$:
 				\begin{enumerate}
 					\item \textbf{Symmetry:} $d(x, y) = d(y, x)$.
 					\item \textbf{Identity of Indiscernibles:} $d(x, y) = 0 \Leftrightarrow x=y$.
@@ -265,25 +265,15 @@
 
 			\begin{theorem}[Reverse Triangle Inequality]
 			\label{reverse-triangle-inequality}
-			For any $x, y, z \in M$:
-			$$|d(x, z) - d(z, y)| \leq d(x, y)$$
+			$$|d(x, z) - d(z, y)| \leq d(x, y), \hspace{2 mm} \forall x, y, z \in (M, d)$$
 			\end{theorem}
 			\begin{proof}
-				Let $x, y, z \in (M, d)$:
-				\begin{align*}
-					d(y, z) &\leq d(y, x) + d(x, z) \tag{Subadditivity}\\
-					d(z, y) &\leq d(x, y) + d(x, z) \tag{Symmetry}\\
-					-d(x, y) &\leq d(x, z) - d(z, y)
-				\end{align*}
-				We also have:
-				\begin{align*}
-					d(x, z) &\leq d(x, y) + d(y, z) \tag{Subadditivity}\\
-					d(x, z) &\leq d(x, y) + d(z, y) \tag{Symmetry}\\
-					d(x, z) - d(z, y) &\leq d(x, y)
-				\end{align*}	
-				Which gives us:
-				$$-d(x, y) \leq d(x, z) - d(z, y) \leq d(x, y)$$
-				$$|d(x, z) - d(z, y)| \leq d(x, y)$$
+				Let $x, y, z \in (M, d)$. \\
+				$\Rightarrow d(y, z) \leq d(y, x) + d(x, z)$ and $d(x, z) \leq d(x, y) + d(y, z)$. \\
+				$\Rightarrow d(z, y) \leq d(x, y) + d(x, z)$ and $d(x, z) \leq d(x, y) + d(z, y)$. \\
+				$\Rightarrow -d(x, y) \leq d(x, z) - d(z, y)$ and $d(x, z) - d(z, y) \leq d(x, y)$. \\
+				$\Rightarrow -d(x, y) \leq d(x, z) - d(z, y) \leq d(x, y)$. \\
+				$\Rightarrow |d(x, z) - d(z, y)| \leq d(x, y)$.
 			\end{proof}
 
 			\begin{definition}[Dot Product]
@@ -462,47 +452,42 @@
 						$\Rightarrow c \in V_{k}$ for some $k = 1, \ldots, n$. \\
 						$\Rightarrow \exists r \in \mathbb{R^{+}}: B_{r}(c) \subset V_{k}$. \\
 						$\Rightarrow \exists r \in \mathbb{R^{+}}: B_{r}(c) \subset \bigcup_{k \in \mathbb{N}} V_{k}$, since any set is contained in its union.
-					\item Suppose $\{V_{k}\}_{k=1}^{n}$ finite collection of open subsets in M. Let $c \in \bigcap_{k=1}^{n} V_{k}$:
-					\begin{align*}
-						&\Rightarrow c \in V_{k}, \forall k = 1, \ldots, n. \\
-						&\Rightarrow \exists r_{k} \in \mathbb{R^{+}}: B_{r_{k}}(c) \subset V_{k}.
-					\end{align*}
-					Let $r = min(r_{1}, \ldots, r_{n})$. Suppose $x \in B_{r}(c)$:
-					\begin{align*}
-						&\Rightarrow d(x, c) < r. \\
-						&\Rightarrow d(x, c) < r_{1}, \ldots, d(x, c) < r_{n}. \\
-						&\Rightarrow x \in B_{r_{1}}(c), \ldots, x \in B_{r_{n}}(c). \\
-						&\Rightarrow x \in V_{1}, \ldots, x \in V_{n}. \\
-						&\Rightarrow x \in \bigcap_{k=1}^{n} V_{k}. \\
-						&\Rightarrow B_{r}(c) \subset \bigcap_{k=1}^{n} V_{k}.
-					\end{align*}					
+					\item Suppose $\{V_{k}\}_{k=1}^{n}$ finite collection of open subsets in M. \\
+						Let $c \in \bigcap_{k=1}^{n} V_{k}$:
+						$\Rightarrow c \in V_{k}, \forall k = 1, \ldots, n.$ \\
+						$\Rightarrow \exists r_{k} \in \mathbb{R^{+}}: B_{r_{k}}(c) \subset V_{k}.$ \\
+						Let $r = min(r_{1}, \ldots, r_{n})$. Suppose $x \in B_{r}(c)$:
+						$\Rightarrow d(x, c) < r.$ \\
+						$\Rightarrow d(x, c) < r_{1}, \ldots, d(x, c) < r_{n}.$ \\
+						$\Rightarrow x \in B_{r_{1}}(c), \ldots, x \in B_{r_{n}}(c).$ \\
+						$\Rightarrow x \in V_{1}, \ldots, x \in V_{n}.$ \\
+						$\Rightarrow x \in \bigcap_{k=1}^{n} V_{k}.$ \\
+						$\Rightarrow B_{r}(c) \subset \bigcap_{k=1}^{n} V_{k}.$
 				\end{enumerate}
 			\end{proof}
 
 			\begin{definition}[Closed Set]
 				\label{closed set}
-				A subset $S$ of a metric space $(M, d)$ is closed if its complement $S^\complement$ is open in $M$.
+				A subset $S$ of a metric space $(M, d)$ is closed if its complement $S^\complement$ is open in $(M, d)$.
 			\end{definition}
 
 			\begin{theorem}
 				In any metric space, a closed ball is a closed set.
 			\end{theorem}
 			\begin{proof} 
-				Define $S = \bar{B}_{\delta}(p)$ as some closed ball in $(M, d)$.
-				Let $c \in S^\complement$.
-				Then, $d(c, p) > \delta$.
-				Choosing $r = d(c, p) - \delta$, clearly $r > 0$.
-				Suppose $x \in B_{r}(c)$.
-				\begin{align*}
-					&\Rightarrow d(x, c) < r. \\
-					&\Rightarrow d(x, c) < d(c, p) - \delta. \\
-					&\Rightarrow d(c, p) - d(x, c) > \delta. \\
-					&\Rightarrow d(c, x) + d(x, p) - d(x, c) > \delta. \\
-					&\Rightarrow d(x, p) > \delta. \\
-					&\Rightarrow x \in S^\complement. \\
-					&\Rightarrow B_{r}(c) \subset S^\complement.
-				\end{align*}
-				So $S^\complement$ is open, making $S$ closed in $M$.
+				Define $S = \bar{B}_{\delta}(p)$ as some closed ball in $(M, d)$. \\
+				Let $c \in S^\complement$. \\
+				Then, $d(c, p) > \delta$. \\
+				Choosing $r = d(c, p) - \delta$, clearly $r \in \mathbb{R}^+$. \\
+				Suppose $x \in B_{r}(c)$. \\
+				$\Rightarrow d(x, c) < r.$ \\
+				$\Rightarrow d(x, c) < d(c, p) - \delta.$ \\
+				$\Rightarrow d(c, p) - d(x, c) > \delta.$ \\
+				$\Rightarrow d(c, x) + d(x, p) - d(x, c) > \delta.$ \\
+				$\Rightarrow d(x, p) > \delta.$ \\
+				$\Rightarrow x \in S^\complement.$ \\
+				$\Rightarrow B_{r}(c) \subset S^\complement.$ \\
+				$\Rightarrow S^\complement$ is open in $(M, d)$. \\
 			\end{proof}
 
 			\begin{theorem}
@@ -537,23 +522,21 @@
 			\begin{theorem}
 				Any singleton set is closed.
 			\end{theorem}
-			\begin{proof} 
+			\begin{proof}
 				Define $S = \{p\}$ as the singleton set $\forall p \in (M, d)$. \\
 				Let $c \in S^\complement = M / \{p\}$. \\
 				Then, $c \neq p$. \\
-				Choosing $r = d(c, p)$, clearly $r > 0$. \\
-				Suppose $x \in B_{r}(c)$.
-				\begin{align*}
-					&\Rightarrow d(x, c) < r. \\
-					&\Rightarrow d(x, c) < d(c, p). \\
-					&\Rightarrow d(c, p) - d(x, c) > 0. \\
-					&\Rightarrow d(p, c) - d(c, x) > 0. \\
-					&\Rightarrow | d(p, c) - d(c, x) | > 0. \\
-					&\Rightarrow d(p, x) > 0. \\
-					&\Rightarrow p \neq x. \\
-					&\Rightarrow x \in S^\complement. \\
-					&\Rightarrow B_{r}(c) \subset S^\complement.
-				\end{align*}
+				Choose $r = d(c, p) \Rightarrow r \in \mathbb{R}^+$. \\
+				Suppose $x \in B_{r}(c)$. \\
+				$\Rightarrow d(x, c) < r.$ \\
+				$\Rightarrow d(x, c) < d(c, p).$ \\
+				$\Rightarrow d(c, p) - d(x, c) > 0.$ \\
+				$\Rightarrow d(p, c) - d(c, x) > 0.$ \\
+				$\Rightarrow | d(p, c) - d(c, x) | > 0.$ \\
+				$\Rightarrow d(p, x) > 0.$ \\
+				$\Rightarrow p \neq x.$ \\
+				$\Rightarrow x \in S^\complement.$ \\
+				$\Rightarrow B_{r}(c) \subset S^\complement.$ \\
 				So $S^\complement$ is open, making $S$ closed in $M$.
 			\end{proof}
 
@@ -571,15 +554,18 @@
 				Any sphere in a metric space is closed.
 			\end{theorem}
 			\begin{proof} 
-				Define sphere of radius $r \in \mathbb{R}^+$ centered as:
-				\begin{align*}
-					S &= \{x \in M: d(x, c) = r \} \\
-					  &= \{x \in M: d(x, c) \leq r \} \cap \{x \in M: d(x, c) \geq r \} \\
-					  &= \{x \in M: d(x, c) \leq r \} \cap \{x \in M: d(x, c) < r \}^\complement \\
-					S  &= \bar{B}_{r}(c)  \cap B_{r}(c)^\complement
-				\end{align*}
-				Note, the closed ball $\bar{B}_{r}(c)$ is closed, and $B_{r}(c)^{\complement}$ is closed since its complement ${B_{r}(c)^{\complement}}^{\complement} = B_{r}(c)$  is the open ball, an open set.
-				The finite intersection of closed sets is closed, so $S$ is closed in $M$.
+				Let $c \in (M, d), r \in \mathbb{R}^+$. \\
+				Define $r$-sphere centered at $c$ as $S = \{x \in (M, d): d(x, c) = r \}$. \\
+				Let $V_1 = \bar{B}_{r}(c)$. \\
+				$\Rightarrow V_1$ closed in $(M, d)$. \\
+				Let $V_2 = B_{r}(c)^\complement$. \\
+				$\Rightarrow V_2^\complement = B_{r}(c)$. \\
+				$\Rightarrow V_2^\complement$ open in $(M, d)$. \\
+				$\Rightarrow V_2$ closed in $(M, d)$. \\
+				$\Rightarrow V_1 \cap V_2$ closed in $(M, d)$. \\
+				$\Rightarrow \{x \in (M, d): d(x, c) \leq r \} \cap \{x \in (M, d): d(x, c) \geq r \}$ closed in $(M, d)$. \\
+				$\Rightarrow \{x \in (M, d): d(x, c) = r \}$ closed in $(M, d)$. \\
+				$\Rightarrow S$ closed in $(M, d)$.
 			\end{proof}
 			\begin{theorem}
 				Any half-interval is neither open nor closed.
@@ -587,7 +573,7 @@
 			\begin{proof} 
 				Let $a, b \in \mathbb{R}, a < b$. \\
 				Define $S = [a, b)$ as a half-interval on $\mathbb{R}$. \\
-				Let $r > 0$. \\
+				Let $r \in \mathbb{R}^+$. \\
 				$\Rightarrow a - r < a$. \\
 				$\Rightarrow a - r < min(S)$. \\
 				$\Rightarrow a - r \notin S$. \\
@@ -607,7 +593,7 @@
 				Define $S = \{ x \in \mathbb{R}^n: x_k < a \}$ and $S' = \{ x \in \mathbb{R}^n: x_k > a \}$. \\
 				Let $c \in S$ and $p \in S'$. \\
 				$\Rightarrow c_k < a$ and $p_k > a$. \\
-				Choose $r = a - c_k$ and $\delta = p_k - a$ $\Rightarrow$ $r, \delta > 0$. \\
+				Choose $r = a - c_k$ and $\delta = p_k - a$ $\Rightarrow$ $r, \delta \in \mathbb{R}^+$. \\
 				Suppose $x \in B_{r}(c)$ and $y \in B_{\delta}(p)$. \\
 				$\Rightarrow d(x, c) < r$ and $d(y, p) < \delta$. \\
 				$\Rightarrow d(x, c) < a - c_k$ and $d(y, p) < p_k - a$. \\
@@ -615,7 +601,7 @@
 				$\Rightarrow \sqrt{\sum_{k} (x_k - c_k)^2} <  a - c_k$ and $\sqrt{\sum_{k} (y_k - p_k)^2} < p_k - a$. \\
 				$\Rightarrow \sqrt{(x_k - c_k)^2} <  a - c_k$ and $\sqrt{(y_k - p_k)^2} < p_k - a$. \\
 				$\Rightarrow | x_k - c_k | <  a - c_k$ and $| y_k - p_k | <  p_k - a$. \\
-				$\Rightarrow x_k - c_k <  a - c_k$ and $p_k - y_k < p_k - a$ \\
+				$\Rightarrow x_k - c_k <  a - c_k$ and $p_k - y_k < p_k - a$. \\
 				$\Rightarrow x_k <  a$ and $y_k >  a$. \\
 				$\Rightarrow x \in S$ and $y \in S'$. \\
 				$\Rightarrow B_{r}(c) \subset S$ and $B_{\delta}(p) \subset S'$.
@@ -715,6 +701,12 @@
 			\end{proof}
 
 		\subsection{Convergent Sequences}
+
+			\begin{definition}[Convergent Sequence]
+				\label{convergent sequence}
+				Let $\{ p_n \}_{n \in \mathbb{N}}$
+				
+			\end{definition}
 		
 		\subsection{Completeness}
 		
