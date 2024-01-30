@@ -143,18 +143,18 @@
 				\begin{proof}
 					Let $x, y \in (\mathbb{F}, +, \cdot)$ s.t. $x, y \neq 0_{\mathbb{F}}$. \\
 					Case 1: $x = 0_{\mathbb{F}} \Rightarrow x \cdot y = 0_{\mathbb{F}} \cdot y = 0_{\mathbb{F}}$. \\
-					Case 2: $y = 0_{\mathbb{F}} \Rightarrow x \cdot y = x \cdot 0_{\mathbb{F}} = 0_{\mathbb{F}}$. \\
+					Case 2: $y = 0_{\mathbb{F}} \Rightarrow x \cdot y = x \cdot 0_{\mathbb{F}} = 0_{\mathbb{F}}$.
 				\end{proof}
 				\item For any Group, the inverse of the inverse element is the element itself.
 				\begin{proof}
 					Let $x \in (G, \cdot)$. \\
 					$\Rightarrow \exists ! x^{-1} \in G: x \cdot x^{-1} = i_G$ \\
 					$\Rightarrow \exists ! ({x^{-1}})^{-1} \in G: ({x^{-1}})^{-1} \cdot x^{-1} = i_G$. \\
-					$\Rightarrow ({x^{-1}})^{-1} = x$, since they are both the solution to same equation:
+					$\Rightarrow$ Both $({x^{-1}})^{-1}$ and $x$ are solutions since they are both the solution to same equation:
 					$$x \cdot y = z: y = x^{-1}, z = i_G$$
 				\end{proof}
 
-				\item For any Field, we can define negative numbers as $-x = -1_\mathbb{F} \cdot x = x \cdot -1_\mathbb{F}$, where $-1_\mathbb{F}$ is the inverse of $1_\mathbb{F}$ under $+$. \\
+				\item For any Field, we can define negative numbers as $-x = -1_\mathbb{F} \cdot x = x \cdot -1_\mathbb{F}$, where $-1_\mathbb{F}$ is the inverse of $1_\mathbb{F}$ under $+$.
 				\begin{proof}
 					Let $x \in (\mathbb{F}, +, \cdot)$. \\
 					$\Rightarrow \exists !x^{-1} \in (\mathbb{F}, +): x^{-1} + x = 0_\mathbb{F}$. \\
@@ -175,15 +175,13 @@
 					$$x + y = z: y = x, z = 0_\mathbb{F}$$
 				\end{proof}
 
-				\item For any Field, multiplying 2 negative numbers yields a positive number. \\
+				\item For any Field, multiplying 2 negative numbers yields a positive number.
 				\begin{proof}
-					Let $x, y \in (\mathbb{F}, +, \cdot)$.
-					\begin{align*}
-						-x \cdot -y &= (-1_\mathbb{F}) \cdot x \cdot (-1_\mathbb{F}) \cdot y \\
-									&= (-1_\mathbb{F}) \cdot (-x \cdot  y) \\
-									&= -(-x \cdot  y) \\
-									&= x \cdot  y \\
-					\end{align*}
+					Let $x, y \in (\mathbb{F}, +, \cdot)$.\\
+					$\Rightarrow -x \cdot -y = (-1_\mathbb{F}) \cdot x \cdot (-1_\mathbb{F}) \cdot y$\\
+					$\Rightarrow -x \cdot -y = (-1_\mathbb{F}) \cdot (-x \cdot  y)$\\
+					$\Rightarrow -x \cdot -y = -(-x \cdot  y)$\\
+					$\Rightarrow -x \cdot -y = x \cdot  y$\\
 				\end{proof}
 
 				\item For any Field, the additive inverse of a sum is the sum of the additive inverses. \\
@@ -221,13 +219,12 @@
 	
 	\section{Metric Spaces}
 		\subsection{Definition of Metric Spaces. Examples}
-			
 			\begin{definition}[Metric Space]
-				A Metric Space is an ordered pair $(M, d)$ where $M$ is some set along with a metric function $d \colon M^2 \to \mathbb{R}$ such that $\forall x, y, z \in (M, d)$:
+				A Metric Space is an ordered pair $(M, d)$ where $M$ is some set along with a metric function $d \colon M^2 \to \mathbb{R}$ s.t. $\forall x, y, z \in (M, d):$
 				\begin{enumerate}
-					\item \textbf{Symmetry:} $d(x, y) = d(y, x)$.
-					\item \textbf{Identity of Indiscernibles:} $d(x, y) = 0 \Leftrightarrow x=y$.
-					\item \textbf{Triangle Inequality:} $d(x, y) \leq d(x, z) + d(z, y)$.
+					\item \textbf{Symmetry:} $d(x, y) = d(y, x)$
+					\item \textbf{Identity of Indiscernibles:} $d(x, y) = 0 \Leftrightarrow x=y$
+					\item \textbf{Triangle Inequality:} $d(x, y) \leq d(x, z) + d(z, y)$
 				\end{enumerate}
 			\end{definition}
 		
@@ -235,14 +232,12 @@
 				Metric functions are non-negative.
 			\end{theorem}
 			\begin{proof}
-				Let $x, y \in (M, d)$:
-				\begin{align*}
-					d(x, y) &= \dfrac{2 \cdot d(x, y)}{2}\\
-					&= \dfrac{d(x, y) + d(x, y)}{2}\\
-					&= \dfrac{d(x, y) + d(y, x)}{2} \tag{Symmetry}\\
-					&\geq \dfrac{d(x, x)}{2} \tag{Subadditivity}\\
-					&= 0 \tag{Identity of Indiscernibles} \\ &&\qedhere
-				\end{align*}
+				Let $x, y \in (M, d)$\\
+				$\Rightarrow d(x, y) = \dfrac{2 \cdot d(x, y)}{2}$\\
+				$\Rightarrow d(x, y) = \dfrac{d(x, y) + d(x, y)}{2}$\\
+				$\Rightarrow d(x, y) = \dfrac{d(x, y) + d(y, x)}{2}$\\
+				$\Rightarrow d(x, y) \geq \dfrac{d(x, x)}{2}$\\
+				$\Rightarrow d(x, y) \geq 0$\\
 			\end{proof}
 
 			\begin{theorem}[General Triangle Inequality]
@@ -251,16 +246,17 @@
 				$$d(x_1,x_n) \leq \sum\limits_{k=1}^{n-1} d(x_k,x_{k+1})$$
 			\end{theorem}
 			\begin{proof}
-				Let $x_1,\ldots,x_n \in (M, d)$. \\
-				(Induction)\\
-				Base Case: $n=2$ is trivial and $n=3$ is satisfied by triangle inequality.\\
-				Inductive Hypothesis: Assume our statement holds for all n $\geq$ 2\\
-				Inductive Step: $\left(n \longrightarrow n+1\right)$
-				\begin{align*}
-					d(x_1,x_{n+1}) &\leq d(x_1,x_n) + d(x_n,x_{n+1})\\
-					&\leq \sum\limits_{k=1}^{n-1} d(x_k,x_{k+1}) + d(x_n,x_{n+1})\\
-					&= \sum\limits_{k=1}^{n} d(x_k,x_{k+1})\\
-				\end{align*}
+				Let $x_1, \ldots, x_n \in (M, d)$. By induction:\\
+				\begin{enumerate}
+					\item Base Case ($n = 3$):\\
+						$\Rightarrow d(x_1, x_3) \leq d(x_1, x_2) + d(x_2, x_3)$
+					\item Inductive Hypothesis:\\
+						$d(x_1,x_n) \leq \sum\limits_{k=1}^{n-1} d(x_k,x_{k+1})$
+					\item Inductive Step:\\
+						$\Rightarrow d(x_1,x_n) + d(x_n,x_{n+1}) \leq \sum\limits_{k=1}^{n-1}  d(x_k,x_{k+1}) + d(x_n,x_{n+1})$\\
+						$\Rightarrow d(x_1,x_n) + d(x_n,x_{n+1}) \leq \sum\limits_{k=1}^n  d(x_k,x_{k+1})$\\
+						$\Rightarrow d(x_1,x_{n+1}) \leq \sum\limits_{k=1}^{n} d(x_k,x_{k+1})$
+					\end{enumerate}
 			\end{proof}
 
 			\begin{theorem}[Reverse Triangle Inequality]
@@ -350,13 +346,14 @@
 
 			\begin{theorem}[Taxicab Metric Space]
 			\label{taxicab metric space}
-				Any nonempty set $M$ with the following metric function forms a Metric Space:
+				For any non-empty set $M$, the Taxicab Metric:
 				\begin{equation*}
 					d(x, y)=\begin{cases}
 							  1 \quad & x \neq y \\
 							  0 \quad & x = y \\
 						 \end{cases}
-					\end{equation*}
+				\end{equation*}
+				forms a metric space $(M, d)$.
 				\end{theorem}
 				\begin{proof}
 					Let $x, y, z \in E$.
@@ -544,10 +541,9 @@
 				Any finite subset of a metric space is closed.
 			\end{corollary}
 			\begin{proof}
-				Let $x_1, \ldots, x_n$ be a finite set of points in $M$. \\
-				$\Rightarrow \{x_1\}, \ldots, \{x_n\}$ all closed singleton sets in $M$. \\
-				$\Rightarrow \bigcup_{k=1}^{n} \{x_k\}$ closed in $M$. \\
-				$\Rightarrow \{ x_1, \ldots, x_n \}$ closed in $M$.
+				Let $x_1, \ldots, x_n \in M$. \\
+				$\Rightarrow \{x_1\}, \ldots, \{x_n\}$ all closed in $M$. \\
+				$\Rightarrow \{ x_1, \ldots, x_n \} = \bigcup_{k=1}^{n} \{x_k\}$ closed in $M$. \\
 			\end{proof}
 
 			\begin{theorem}
@@ -576,8 +572,8 @@
 				Let $r \in \mathbb{R}^+$. \\
 				$\Rightarrow a - r < a$. \\
 				$\Rightarrow a - r < min(S)$. \\
-				$\Rightarrow a - r \notin S$. \\
-				$\Rightarrow \nexists r \in \mathbb{R}^{+}: B_{r}(a) = (a - r, a + r) \subset S$. \\
+				$\Rightarrow a - r \in S^\complement$. \\
+				$\Rightarrow \exists a \in S, \forall r \in \mathbb{R}^{+}: B_{r}(a) = (a - r, a + r) \subset S$. \\
 				$\Rightarrow S$ is not open in $\mathbb{R}$. \\
 				$\Rightarrow [b, \infty)$ is not open in $\mathbb{R}$ by same logic.\\
 				$\Rightarrow S^\complement = (-\infty, a) \cup [b, \infty)$ is not open in $\mathbb{R}$ by same logic.\\
@@ -623,21 +619,21 @@
 				\label{open closed intervals}
 				Let $a_1, \ldots, a_n, b_1, \ldots b_n \in \mathbb{R}$.
 				For $a_1 < b_1, \ldots, a_n < b_n$, the open interval in $\mathbb{R}^n$ is:
-				$$ \{ x \in \mathbb{R}^n: a_k < x_k < b_k, \forall k \in \{ 1, \ldots, n \} \}$$
+				$$ \{ x \in \mathbb{R}^n: a_k < x_k < b_k, k = 1, \ldots, n \}$$
 				For $a_1 \leq b_1, \ldots, a_n \leq b_n$, the closed interval in $\mathbb{R}^n$ is:
-				$$ \{ x \in \mathbb{R}^n: a_k \leq x_k \leq b_k, \forall k \in \{ 1, \ldots, n \} \}$$
+				$$ \{ x \in \mathbb{R}^n: a_k \leq x_k \leq b_k, k = 1, \ldots, n \}$$
 			\end{definition}
 
 			\begin{theorem}
 				Any open/closed interval in Euclidean space is open/closed set.
 			\end{theorem}
 			\begin{proof} 
-				Define $S = \{ x \in \mathbb{R}^n: a_k < x_k < b_k, \forall k \in \{ 1, \ldots, n \} \}$. \\
+				Define $S = \{ x \in \mathbb{R}^n: a_k < x_k < b_k, k = 1, \ldots, n \}$. \\
 				$\Rightarrow S = \bigcap_{k=1}^{n} \{ x \in \mathbb{R}^n: a_k < x_k < b_k \}$. \\
 				$\Rightarrow S = (\bigcap_{k=1}^{n} \{ x \in \mathbb{R}^n: x_k > a_k \}) \cap (\bigcap_{k=1}^{n} \{ x \in \mathbb{R}^n: x_k < b_k \})$. \\
 				$\Rightarrow S$ is open, since it is the finite intersection of ($2n$) open sets. \\
 
-				Define $S' = \{ x \in \mathbb{R}^n: a_k \leq x_k \leq b_k, \forall k \in \{ 1, \ldots, n \} \}$. \\
+				Define $S' = \{ x \in \mathbb{R}^n: a_k \leq x_k \leq b_k, k = 1, \ldots, n \}$. \\
 				$\Rightarrow S' = \bigcap_{k=1}^{n} \{ x \in \mathbb{R}^n: a_k \leq x_k \leq b_k \}$. \\
 				$\Rightarrow S' = (\bigcap_{k=1}^{n} \{ x \in \mathbb{R}^n: x_k \geq a_k \}) \cap (\bigcap_{k=1}^{n} \{ x \in \mathbb{R}^n: x_k \leq b_k \})$. \\
 				$\Rightarrow S'$ is closed, since it is the finite intersection of ($2n$) closed sets.
@@ -653,7 +649,7 @@
 			\end{theorem}
 			\begin{proof} 
 				Let $a, b \in \mathbb{R}^n$ s.t. $a \neq b$. \\
-				Define $S = \{ x \in \mathbb{R}^n: a_k \leq x_k \leq b_k, \forall k \in \{ 1, \ldots, n \} \}$. \\
+				Define $S = \{ x \in \mathbb{R}^n: a_k \leq x_k \leq b_k, k = 1, \ldots, n \}$. \\
 				Choose $r = d(b, a) > 0$. \\
 				Let $x \in S$. \\
 				$\Rightarrow 0 \leq x_k - a_k \leq b_k - a_k$. \\
@@ -666,7 +662,7 @@
 				$\Rightarrow x \in \bar{B}_r(a)$. \\
 				$\Rightarrow S \subset \bar{B}_r(a)$. \\
 
-				Define $S' = \{ x \in \mathbb{R}^n: a_k < x_k < b_k, \forall k \in \{ 1, \ldots, n \} \}$. \\
+				Define $S' = \{ x \in \mathbb{R}^n: a_k < x_k < b_k, k = 1, \ldots, n \}$. \\
 				$\Rightarrow S' \subset S$. \\
 				$\Rightarrow S' \subset \bar{B}_r(a)$.
 			\end{proof}
@@ -692,9 +688,8 @@
 				Let $S \subset \mathbb{R}, S \neq \varnothing$. \\
 				Suppose S is closed in $\mathbb{R}$ and bounded above. \\
 				Let $c = sup(S)$. \\
-				With an eye to contradict, assume $c \notin S$. \\
-				$\Rightarrow c \in S^\complement$. \\
-				$\Rightarrow \exists r \in \mathbb{R}^+$ s.t. $B_r(c) \subset S^\complement$, since $S^\complement$ open in $\mathbb{R}$. \\
+				With an eye to contradict, assume $c \in S^\complement$. \\
+				Since $S^\complement$ open in $\mathbb{R}$, $\exists r \in \mathbb{R}^+$ s.t. $(c-r, c+r) \subset S^\complement$. \\
 				Then no element in S is greater than $c - r$. \\
 				$\Rightarrow c - r$ is an upper bound for $S$. \\
 				This must be a contradictions, so $c \in S$.
