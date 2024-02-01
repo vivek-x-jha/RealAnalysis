@@ -43,7 +43,7 @@
 
 			\begin{definition}[Abelian Group]
 			\label{abelian group}
-				An Abelian Group is a Commutative Group: \\
+				An Abelian Group is a Commutative Group:
 				$$\forall x, y \in G: x * y = y * x$$
 			\end{definition}
 
@@ -78,99 +78,94 @@
 				\item For any Group, the equation $x \cdot y = z$ has a unique solution in $x$: \\
 				$(G, \cdot)$ Group $\Rightarrow \forall y, z \in G, \exists! x \in G: x \cdot y = z$.
 				\begin{proof}
-					Let $y, z \in (G, \cdot)$. \\
-					$\Rightarrow y^{-1} \in G$. \\
-					$\Rightarrow z \cdot y^{-1} \in G$. \\
-					$\Rightarrow (z \cdot y^{-1}) \cdot y = z \cdot (y^{-1} \cdot y)$. \\
-					$\Rightarrow (z \cdot y^{-1}) \cdot y = z \cdot i_G$. \\
-					$\Rightarrow (z \cdot y^{-1}) \cdot y = z$. \\
-					$\Rightarrow x = z \cdot y^{-1}$ is a solution to $x \cdot y = z$. \\
-					Let $w$ be some other solution to $x \cdot y = z$. \\
-					$\Rightarrow w \cdot y = z$. \\
-					$\Rightarrow (w \cdot y) \cdot y^{-1} = z \cdot y^{-1}$. \\
-					$\Rightarrow w \cdot (y \cdot y^{-1}) = z \cdot y^{-1}$. \\
-					$\Rightarrow w \cdot i_G = z \cdot y^{-1}$. \\
-					$\Rightarrow w = z \cdot y^{-1}$. \\
-					$\Rightarrow w = x$. \\
-					Therefore $ x = z \cdot y^{-1}$ is a unique solution to $x \cdot y = z$. \\		
+					Let $y, z \in (G, \cdot)$.\\
+					$\Rightarrow y^{-1} \in G$.\\
+					$\Rightarrow z \cdot y^{-1} \in G$.\\
+					$\Rightarrow (z \cdot y^{-1}) \cdot y = z \cdot (y^{-1} \cdot y)$.\\
+					$\Rightarrow (z \cdot y^{-1}) \cdot y = z \cdot i_G$.\\
+					$\Rightarrow (z \cdot y^{-1}) \cdot y = z$.\\
+					$\Rightarrow x = z \cdot y^{-1}$ is a solution to $x \cdot y = z$.\\
+					Let $w$ be some other solution to $x \cdot y = z$.\\
+					$\Rightarrow w \cdot y = z$.\\
+					$\Rightarrow (w \cdot y) \cdot y^{-1} = z \cdot y^{-1}$.\\
+					$\Rightarrow w \cdot (y \cdot y^{-1}) = z \cdot y^{-1}$.\\
+					$\Rightarrow w \cdot i_G = z \cdot y^{-1}$.\\
+					$\Rightarrow w = z \cdot y^{-1}$.\\
+					$\Rightarrow w = x$.\\
+					Therefore $ x = z \cdot y^{-1}$ is a unique solution to $x \cdot y = z$.\\		
 				\end{proof}
 
 				\item For any Group, the identity element is unique:
 				$$\forall x \in G, \exists ! i_G \in G: i_G \cdot x = x \cdot i_G = x$$
 				\begin{proof}
-					Let $(G, \cdot)$ be a Group with identity element $i_G$. \\
-					Let $y, z \in G$ s.t. $y = z$. \\
-					$\Rightarrow i_G = y \cdot y^{-1} = z \cdot y^{-1}$. \\
-					$\Rightarrow x = i_G$ is a unique solution to $x \cdot y = z$. \\
+					Let $(G, \cdot)$ be a Group with identity element $i_G$.\\
+					Let $y, z \in G$ s.t. $y = z$.\\
+					$\Rightarrow i_G = y \cdot y^{-1} = z \cdot y^{-1}$.\\
+					$\Rightarrow x = i_G$ is a unique solution to $x \cdot y = z$.\\
 				\end{proof}
 
 				\item For any Group, inverse elements are unique:
 				$$\forall x \in G, \exists ! x^{-1} \in G: x \cdot x^{-1} = x^{-1} \cdot x = i_G$$
 				\begin{proof}
-					Let $(G, \cdot)$ be a Group with identity element $i_G$. \\
-					Let $y, z \in (G, \cdot)$ s.t. $z = i_G$. \\
-					$\Rightarrow y^{-1} = i_G \cdot y^{-1} = z \cdot y^{-1}$. \\
+					Let $(G, \cdot)$ be a Group with identity element $i_G$.\\
+					Let $y, z \in (G, \cdot)$ s.t. $z = i_G$.\\
+					$\Rightarrow y^{-1} = i_G \cdot y^{-1} = z \cdot y^{-1}$.\\
 					$\Rightarrow x = y^{-1}$ is a unique solution to $x \cdot y = z$.
 				\end{proof}
 
-				\item For any Field, any element multiplied by the Zero element $0_{\mathbb{F}}$ is $0_{\mathbb{F}}$.
+				\item For any Field, any element multiplied by the Additive identity element yields the Additive identity element.
 				\begin{proof}
-					Let $x \in (\mathbb{F}, +, \cdot)$. \\
-					$\Rightarrow x \cdot 0_{\mathbb{F}} = x \cdot i_{(\mathbb{F}, +)} = x \cdot (i_{(\mathbb{F}, +)} + i_{(\mathbb{F}, +)}) = (x \cdot i_{(\mathbb{F}, +)}) + (x \cdot i_{(\mathbb{F}, +)})$. \\
-					Let $y = x \cdot i_{(\mathbb{F}, +)}$. \\
-					$\Rightarrow y = y + y$. \\
-					$\Rightarrow y + y^{-1} = (y + y) + y^{-1}$. \\
-					$\Rightarrow y + y^{-1} = y + (y + y^{-1})$. \\
-					$\Rightarrow i_{(\mathbb{F}, +)} = y + i_{(\mathbb{F}, +)}$. \\
-					$\Rightarrow i_{(\mathbb{F}, +)} = y$. \\
-					$\Rightarrow 0_{\mathbb{F}} = y$. \\
-					$\Rightarrow 0_{\mathbb{F}} = x \cdot 0_{\mathbb{F}}$. \\
-
-					$\Rightarrow 0_{\mathbb{F}} \cdot x = i_{(\mathbb{F}, +)} \cdot x = (i_{(\mathbb{F}, +)} + i_{(\mathbb{F}, +)}) \cdot x = (i_{(\mathbb{F}, +)} \cdot x) + (i_{(\mathbb{F}, +)} \cdot x)$. \\
-					Let $z = i_{(\mathbb{F}, +)} \cdot x$. \\
-					$\Rightarrow z = z + z$. \\
-					$\Rightarrow z + z^{-1} = (z + z) + z^{-1}$. \\
-					$\Rightarrow z + z^{-1} = z + (z + z^{-1})$. \\
-					$\Rightarrow i_{(\mathbb{F}, +)} = z + i_{(\mathbb{F}, +)}$. \\
-					$\Rightarrow i_{(\mathbb{F}, +)} = z$. \\
-					$\Rightarrow 0_{\mathbb{F}} = z$. \\
-					$\Rightarrow 0_{\mathbb{F}} = 0_{\mathbb{F}} \cdot x$. \\
-
+					Let $x \in (\mathbb{F}, +, \cdot)$.\\
+					$\Rightarrow x \cdot 0_{\mathbb{F}} = x \cdot i_{(\mathbb{F}, +)} = x \cdot (i_{(\mathbb{F}, +)} + i_{(\mathbb{F}, +)}) = (x \cdot i_{(\mathbb{F}, +)}) + (x \cdot i_{(\mathbb{F}, +)})$.\\
+					Let $y = x \cdot i_{(\mathbb{F}, +)}$.\\
+					$\Rightarrow y = y + y$.\\
+					$\Rightarrow y + y^{-1} = (y + y) + y^{-1}$.\\
+					$\Rightarrow y + y^{-1} = y + (y + y^{-1})$.\\
+					$\Rightarrow i_{(\mathbb{F}, +)} = y + i_{(\mathbb{F}, +)}$.\\
+					$\Rightarrow i_{(\mathbb{F}, +)} = y$.\\
+					$\Rightarrow 0_{\mathbb{F}} = y$.\\
+					$\Rightarrow 0_{\mathbb{F}} = x \cdot 0_{\mathbb{F}}$.
+					$\Rightarrow 0_{\mathbb{F}} \cdot x = i_{(\mathbb{F}, +)} \cdot x = (i_{(\mathbb{F}, +)} + i_{(\mathbb{F}, +)}) \cdot x = (i_{(\mathbb{F}, +)} \cdot x) + (i_{(\mathbb{F}, +)} \cdot x)$.\\
+					Let $z = i_{(\mathbb{F}, +)} \cdot x$.\\
+					$\Rightarrow z = z + z$.\\
+					$\Rightarrow z + z^{-1} = (z + z) + z^{-1}$.\\
+					$\Rightarrow z + z^{-1} = z + (z + z^{-1})$.\\
+					$\Rightarrow i_{(\mathbb{F}, +)} = z + i_{(\mathbb{F}, +)}$.\\
+					$\Rightarrow i_{(\mathbb{F}, +)} = z$.\\
+					$\Rightarrow 0_{\mathbb{F}} = z$.\\
+					$\Rightarrow 0_{\mathbb{F}} = 0_{\mathbb{F}} \cdot x$.\\
 					$\Rightarrow x \cdot 0_{\mathbb{F}} = 0_{\mathbb{F}} \cdot x = 0_{\mathbb{F}}$.
 				\end{proof}
 				
 				\item For any Field, if the product of 2 elements is the Zero element, then atleast 1 factor must be the Zero element:
 				\begin{proof}
-					Let $x, y \in (\mathbb{F}, +, \cdot)$ s.t. $x, y \neq 0_{\mathbb{F}}$. \\
-					Case 1: $x = 0_{\mathbb{F}} \Rightarrow x \cdot y = 0_{\mathbb{F}} \cdot y = 0_{\mathbb{F}}$. \\
+					Let $x, y \in (\mathbb{F}, +, \cdot)$ s.t. $x, y \neq 0_{\mathbb{F}}$.\\
+					Case 1: $x = 0_{\mathbb{F}} \Rightarrow x \cdot y = 0_{\mathbb{F}} \cdot y = 0_{\mathbb{F}}$.\\
 					Case 2: $y = 0_{\mathbb{F}} \Rightarrow x \cdot y = x \cdot 0_{\mathbb{F}} = 0_{\mathbb{F}}$.
 				\end{proof}
 				\item For any Group, the inverse of the inverse element is the element itself.
 				\begin{proof}
-					Let $x \in (G, \cdot)$. \\
+					Let $x \in (G, \cdot)$.\\
 					$\Rightarrow \exists ! x^{-1} \in G: x \cdot x^{-1} = i_G$ \\
-					$\Rightarrow \exists ! ({x^{-1}})^{-1} \in G: ({x^{-1}})^{-1} \cdot x^{-1} = i_G$. \\
+					$\Rightarrow \exists ! ({x^{-1}})^{-1} \in G: ({x^{-1}})^{-1} \cdot x^{-1} = i_G$.\\
 					$\Rightarrow$ Both $({x^{-1}})^{-1}$ and $x$ are solutions since they are both the solution to same equation:
 					$$x \cdot y = z: y = x^{-1}, z = i_G$$
 				\end{proof}
 
 				\item For any Field, we can define negative numbers as $-x = -1_\mathbb{F} \cdot x = x \cdot -1_\mathbb{F}$, where $-1_\mathbb{F}$ is the inverse of $1_\mathbb{F}$ under $+$.
 				\begin{proof}
-					Let $x \in (\mathbb{F}, +, \cdot)$. \\
-					$\Rightarrow \exists !x^{-1} \in (\mathbb{F}, +): x^{-1} + x = 0_\mathbb{F}$. \\
-					Define $x^{-1} = -x$. \\
-					$\Rightarrow -x + x = 0_\mathbb{F}$. \\
-					
-					$\Rightarrow -1_\mathbb{F} \cdot x + x = -1_\mathbb{F} \cdot x + 1_\mathbb{F} \cdot x$. \\
-					$\Rightarrow -1_\mathbb{F} \cdot x + x = (-1_\mathbb{F} \cdot + 1_\mathbb{F}) \cdot x$. \\
-					$\Rightarrow -1_\mathbb{F} \cdot x + x = 0_\mathbb{F} \cdot x$. \\
-					$\Rightarrow -1_\mathbb{F} \cdot x + x = 0_\mathbb{F}$. \\
-
-					$\Rightarrow x \cdot -1_\mathbb{F} + x = x \cdot -1_\mathbb{F} + x \cdot 1_\mathbb{F}$. \\
-					$\Rightarrow x \cdot -1_\mathbb{F} + x = x \cdot (-1_\mathbb{F} \cdot + 1_\mathbb{F})$. \\
-					$\Rightarrow x \cdot -1_\mathbb{F} + x = x \cdot 0_\mathbb{F}$. \\
-					$\Rightarrow x \cdot -1_\mathbb{F} + x = 0_\mathbb{F}$. \\
-
+					Let $x \in (\mathbb{F}, +, \cdot)$.\\
+					$\Rightarrow \exists !x^{-1} \in (\mathbb{F}, +): x^{-1} + x = 0_\mathbb{F}$.\\
+					Define $x^{-1} = -x$.\\
+					$\Rightarrow -x + x = 0_\mathbb{F}$.\\
+					$\Rightarrow -1_\mathbb{F} \cdot x + x = -1_\mathbb{F} \cdot x + 1_\mathbb{F} \cdot x$.\\
+					$\Rightarrow -1_\mathbb{F} \cdot x + x = (-1_\mathbb{F} \cdot + 1_\mathbb{F}) \cdot x$.\\
+					$\Rightarrow -1_\mathbb{F} \cdot x + x = 0_\mathbb{F} \cdot x$.\\
+					$\Rightarrow -1_\mathbb{F} \cdot x + x = 0_\mathbb{F}$.\\
+					Also $x \cdot -1_\mathbb{F} + x = x \cdot -1_\mathbb{F} + x \cdot 1_\mathbb{F}$.\\
+					$\Rightarrow x \cdot -1_\mathbb{F} + x = x \cdot (-1_\mathbb{F} \cdot + 1_\mathbb{F})$.\\
+					$\Rightarrow x \cdot -1_\mathbb{F} + x = x \cdot 0_\mathbb{F}$.\\
+					$\Rightarrow x \cdot -1_\mathbb{F} + x = 0_\mathbb{F}$.\\
 					$\Rightarrow -x = -1_\mathbb{F} \cdot x = x \cdot -1_\mathbb{F}$, since all three are solutions to same equation:
 					$$x + y = z: y = x, z = 0_\mathbb{F}$$
 				\end{proof}
@@ -184,29 +179,27 @@
 					$\Rightarrow -x \cdot -y = x \cdot  y$\\
 				\end{proof}
 
-				\item For any Field, the additive inverse of a sum is the sum of the additive inverses. \\
+				\item For any Field, the additive inverse of a sum is the sum of the additive inverses.
 				\begin{proof}
-					Let $x, y \in (\mathbb{F}, +, \cdot)$.
-					\begin{align*}
-						-(x + y) &= (-1_\mathbb{F}) \cdot (x + y) \\
-									&= (-1_\mathbb{F}) \cdot x + (-1_\mathbb{F}) \cdot  y \\
-									&= (-x) + (-y)
-					\end{align*}
+					Let $x, y \in (\mathbb{F}, +, \cdot)$\\
+					$\Rightarrow -(x + y) = (-1_\mathbb{F}) \cdot (x + y)$\\
+					$\Rightarrow -(x + y) = (-1_\mathbb{F}) \cdot x + (-1_\mathbb{F}) \cdot y$\\
+					$\Rightarrow -(x + y) = (-x) + (-y)$
 				\end{proof}
 
-				\item For any Field, the multiplicative inverse of a product of non-zero elements is the product of the multiplicative inverses reversed. \\
+				\item For any Field, the multiplicative inverse of a product of non-zero elements is the product of the multiplicative inverses reversed.
 				\begin{proof}
-					Let $x, y \in (\mathbb{F}, +, \cdot)$ s.t. $x, y \neq 0_{\mathbb{F}}$. \\
+					Let $x, y \in (\mathbb{F}, +, \cdot)$ s.t. $x, y \neq 0_{\mathbb{F}}$.\\
 					$\Rightarrow x \cdot y \neq 0_\mathbb{F}$ \\
-					$\Rightarrow \exists ! x^{-1}, y^{-1}, (x \cdot y)^{-1} \in (\mathbb{F}, \cdot)$. \\
-					$\Rightarrow (x \cdot y)^{-1} \cdot (x \cdot y) = 1_\mathbb{F}$. \\
-					$\Rightarrow (x \cdot y)^{-1} \cdot (x \cdot y) \cdot y^{-1} = 1_\mathbb{F} \cdot y^{-1}$. \\
-					$\Rightarrow (x \cdot y)^{-1} \cdot x \cdot (y \cdot y^{-1}) = 1_\mathbb{F} \cdot y^{-1}$. \\
-					$\Rightarrow (x \cdot y)^{-1} \cdot x \cdot 1_\mathbb{F} = 1_\mathbb{F} \cdot y^{-1}$. \\
-					$\Rightarrow (x \cdot y)^{-1} \cdot x = y^{-1}$. \\
-					$\Rightarrow (x \cdot y)^{-1} \cdot x \cdot x^{-1} = y^{-1} \cdot x^{-1}$. \\
-					$\Rightarrow (x \cdot y)^{-1} \cdot 1_\mathbb{F} = y^{-1} \cdot x^{-1}$. \\
-					$\Rightarrow (x \cdot y)^{-1} = y^{-1} \cdot x^{-1}$. \\
+					$\Rightarrow \exists ! x^{-1}, y^{-1}, (x \cdot y)^{-1} \in (\mathbb{F}, \cdot)$.\\
+					$\Rightarrow (x \cdot y)^{-1} \cdot (x \cdot y) = 1_\mathbb{F}$.\\
+					$\Rightarrow (x \cdot y)^{-1} \cdot (x \cdot y) \cdot y^{-1} = 1_\mathbb{F} \cdot y^{-1}$.\\
+					$\Rightarrow (x \cdot y)^{-1} \cdot x \cdot (y \cdot y^{-1}) = 1_\mathbb{F} \cdot y^{-1}$.\\
+					$\Rightarrow (x \cdot y)^{-1} \cdot x \cdot 1_\mathbb{F} = 1_\mathbb{F} \cdot y^{-1}$.\\
+					$\Rightarrow (x \cdot y)^{-1} \cdot x = y^{-1}$.\\
+					$\Rightarrow (x \cdot y)^{-1} \cdot x \cdot x^{-1} = y^{-1} \cdot x^{-1}$.\\
+					$\Rightarrow (x \cdot y)^{-1} \cdot 1_\mathbb{F} = y^{-1} \cdot x^{-1}$.\\
+					$\Rightarrow (x \cdot y)^{-1} = y^{-1} \cdot x^{-1}$.\\
 				\end{proof}
 			\end{enumerate}
 
@@ -246,7 +239,7 @@
 				$$d(x_1,x_n) \leq \sum\limits_{k=1}^{n-1} d(x_k,x_{k+1})$$
 			\end{theorem}
 			\begin{proof}
-				Let $x_1, \ldots, x_n \in (M, d)$. By induction:\\
+				Let $x_1, \ldots, x_n \in (M, d)$. By induction:
 				\begin{enumerate}
 					\item Base Case ($n = 3$):\\
 						$\Rightarrow d(x_1, x_3) \leq d(x_1, x_2) + d(x_2, x_3)$
@@ -264,11 +257,11 @@
 			$$|d(x, z) - d(z, y)| \leq d(x, y), \hspace{2 mm} \forall x, y, z \in (M, d)$$
 			\end{theorem}
 			\begin{proof}
-				Let $x, y, z \in (M, d)$. \\
-				$\Rightarrow d(y, z) \leq d(y, x) + d(x, z)$ and $d(x, z) \leq d(x, y) + d(y, z)$. \\
-				$\Rightarrow d(z, y) \leq d(x, y) + d(x, z)$ and $d(x, z) \leq d(x, y) + d(z, y)$. \\
-				$\Rightarrow -d(x, y) \leq d(x, z) - d(z, y)$ and $d(x, z) - d(z, y) \leq d(x, y)$. \\
-				$\Rightarrow -d(x, y) \leq d(x, z) - d(z, y) \leq d(x, y)$. \\
+				Let $x, y, z \in (M, d)$.\\
+				$\Rightarrow d(y, z) \leq d(y, x) + d(x, z)$ and $d(x, z) \leq d(x, y) + d(y, z)$.\\
+				$\Rightarrow d(z, y) \leq d(x, y) + d(x, z)$ and $d(x, z) \leq d(x, y) + d(z, y)$.\\
+				$\Rightarrow -d(x, y) \leq d(x, z) - d(z, y)$ and $d(x, z) - d(z, y) \leq d(x, y)$.\\
+				$\Rightarrow -d(x, y) \leq d(x, z) - d(z, y) \leq d(x, y)$.\\
 				$\Rightarrow |d(x, z) - d(z, y)| \leq d(x, y)$.
 			\end{proof}
 
@@ -284,22 +277,20 @@
 			\label{cauchy-schwarz}
 				$$|\bm{x}\cdot\bm{y}| \leq ||\bm{x}||\cdot||\bm{y}||, \hspace{2 mm} \forall \bm{x}, \bm{y} \in \mathbb{R}^n$$
 			\begin{proof}
-				Let $\bm{x}, \bm{y} \in \mathbb{R}^n$. Then,
-				\begin{align*}
-					||t \cdot \bm{y} + \bm{x}||^2 &\geq 0, \hspace{2 mm} \forall t \in \mathbb{R}\\
-					\sum\limits_{i=1}^n {(t \cdot y_i + x_i)}^2 &\geq 0\\
-					\sum\limits_{i=1}^n (t^2 \cdot y_i^2 + 2x_i y_i t+x_i^2) &\geq 0\\
-					t^2 \sum\limits_{i=1}^n y_i^2 + 2t \sum\limits_{i=1}^n x_i y_i + \sum\limits_{i=1}^n x_i^2 &\geq 0\\
-					t^2 ||\bm{y}||^2 + 2t (\bm{x}\cdot\bm{y}) + ||\bm{x}||^2 &\geq 0\\
-					a t^2+bt+c &\geq 0\\
-					b^2-4ac &\le 0\\
-					(2(\bm{x}\cdot\bm{y}))^2 - 4||\bm{y}||^2 ||\bm{x}||^2 &\leq 0\\
-					4(\bm{x}\cdot\bm{y})^2 - 4||\bm{y}||^2 ||\bm{x}||^2 &\leq 0\\
-					(\bm{x}\cdot\bm{y})^2 - ||\bm{y}||^2 ||\bm{x}||^2 &\leq 0\\
-					(\bm{x}\cdot\bm{y})^2 - (||\bm{x}|| \cdot ||\bm{y}||)^2 &\leq 0\\
-					(\bm{x}\cdot\bm{y})^2 &\leq (||\bm{x}|| \cdot ||\bm{y}||)^2\\
-					|\bm{x}\cdot\bm{y}| &\leq ||\bm{x}|| \cdot ||\bm{y}|| &&\qedhere
-				\end{align*}
+				Let $\bm{x}, \bm{y} \in \mathbb{R}^n, t \in \mathbb{R}$\\
+					$\Rightarrow ||t \cdot \bm{y} + \bm{x}||^2 \geq 0$\\
+					$\Rightarrow \sum\limits_{i=1}^n {(t \cdot y_i + x_i)}^2 \geq 0$\\
+					$\Rightarrow \sum\limits_{i=1}^n (t^2 \cdot y_i^2 + 2x_i y_i t+x_i^2) \geq 0$\\
+					$\Rightarrow t^2 \sum\limits_{i=1}^n y_i^2 + 2t \sum\limits_{i=1}^n x_i y_i + \sum\limits_{i=1}^n x_i^2 \geq 0$\\
+					$\Rightarrow t^2 ||\bm{y}||^2 + 2t (\bm{x}\cdot\bm{y}) + ||\bm{x}||^2 \geq 0$\\
+					$\Rightarrow a t^2+bt+c \geq 0$\\
+					$\Rightarrow b^2-4ac \le 0$\\
+					$\Rightarrow (2(\bm{x}\cdot\bm{y}))^2 - 4||\bm{y}||^2 ||\bm{x}||^2 \leq 0$\\
+					$\Rightarrow 4(\bm{x}\cdot\bm{y})^2 - 4||\bm{y}||^2 ||\bm{x}||^2 \leq 0$\\
+					$\Rightarrow (\bm{x}\cdot\bm{y})^2 - ||\bm{y}||^2 ||\bm{x}||^2 \leq 0$\\
+					$\Rightarrow (\bm{x}\cdot\bm{y})^2 - (||\bm{x}|| \cdot ||\bm{y}||)^2 \leq 0$\\
+					$\Rightarrow (\bm{x}\cdot\bm{y})^2 \leq (||\bm{x}|| \cdot ||\bm{y}||)^2$\\
+					$\Rightarrow |\bm{x}\cdot\bm{y}| \leq ||\bm{x}|| \cdot ||\bm{y}||$
 			\end{proof}
 			\end{theorem}
 
@@ -359,7 +350,7 @@
 					Let $x, y, z \in E$.
 					\item \textbf{Identity of Indiscernibles:} $d(x, x) = 0$.
 					\item \textbf{Symmetry:} \\
-						Let $x \neq y \Rightarrow d(x, y) = 1 = d(y, x)$. \\
+						Let $x \neq y \Rightarrow d(x, y) = 1 = d(y, x)$.\\
 						Let $x=y \Rightarrow d(x, y) = 0 = d(y, x)$.
 					\item \textbf{Subadditivity:}
 						\begin{equation*}
@@ -415,16 +406,16 @@
 				In any metric space, an open ball is an open set.
 			\end{theorem}
 			\begin{proof} 
-				Define $S = B_{\delta}(p)$ s.t.  $p \in M, \delta \in \mathbb{R}^+$. \\
-				Let $c \in S$. \\
-				$\Rightarrow d(c, p) < \delta$. \\
-				Choose $r = \delta - d(c, p) \Rightarrow r \in \mathbb{R}^+$. \\
-				Suppose $x \in B_{r}(c)$. \\
-				$\Rightarrow d(x, c) < r$. \\
-				$\Rightarrow d(x, c) < \delta - d(c, p)$. \\
-				$\Rightarrow d(x, c) + d(c, p) < \delta$. \\
+				Define $S = B_{\delta}(p)$ s.t.  $p \in M, \delta \in \mathbb{R}^+$.\\
+				Let $c \in S$.\\
+				$\Rightarrow d(c, p) < \delta$.\\
+				Choose $r = \delta - d(c, p) \Rightarrow r \in \mathbb{R}^+$.\\
+				Suppose $x \in B_{r}(c)$.\\
+				$\Rightarrow d(x, c) < r$.\\
+				$\Rightarrow d(x, c) < \delta - d(c, p)$.\\
+				$\Rightarrow d(x, c) + d(c, p) < \delta$.\\
 				$\Rightarrow d(x, p) < \delta$. (Triangle Inequality) \\
-				$\Rightarrow x \in S$. \\
+				$\Rightarrow x \in S$.\\
 				$\Rightarrow B_{r}(c) \subset S$.
 			\end{proof}
 
@@ -444,12 +435,12 @@
 				\begin{enumerate}
 					\item Let $c \in \varnothing$. But $c \notin \varnothing$. So trivially, $\exists r \in \mathbb{R^{+}}: B_{r}(c) \subset \varnothing$.
 					\item Let $c \in M$. Suppose $x \in B_{r}(c) \Rightarrow d(x, c) < r \Rightarrow x \in M \Rightarrow B_{r}(c) \subset M$.
-					\item Suppose $\{V_{k}\}_{k \in \mathbb{N}}$ arbitrary collection of open subsets in M. \\
-						Let $c \in \bigcup_{k \in \mathbb{N}} V_{k}$. \\
-						$\Rightarrow c \in V_{k}$ for some $k = 1, \ldots, n$. \\
-						$\Rightarrow \exists r \in \mathbb{R^{+}}: B_{r}(c) \subset V_{k}$. \\
+					\item Suppose $\{V_{k}\}_{k \in \mathbb{N}}$ arbitrary collection of open subsets in M.\\
+						Let $c \in \bigcup_{k \in \mathbb{N}} V_{k}$.\\
+						$\Rightarrow c \in V_{k}$ for some $k = 1, \ldots, n$.\\
+						$\Rightarrow \exists r \in \mathbb{R^{+}}: B_{r}(c) \subset V_{k}$.\\
 						$\Rightarrow \exists r \in \mathbb{R^{+}}: B_{r}(c) \subset \bigcup_{k \in \mathbb{N}} V_{k}$, since any set is contained in its union.
-					\item Suppose $\{V_{k}\}_{k=1}^{n}$ finite collection of open subsets in M. \\
+					\item Suppose $\{V_{k}\}_{k=1}^{n}$ finite collection of open subsets in M.\\
 						Let $c \in \bigcap_{k=1}^{n} V_{k}$:
 						$\Rightarrow c \in V_{k}, \forall k = 1, \ldots, n.$ \\
 						$\Rightarrow \exists r_{k} \in \mathbb{R^{+}}: B_{r_{k}}(c) \subset V_{k}.$ \\
@@ -472,11 +463,11 @@
 				In any metric space, a closed ball is a closed set.
 			\end{theorem}
 			\begin{proof} 
-				Define $S = \bar{B}_{\delta}(p)$ as some closed ball in $(M, d)$. \\
-				Let $c \in S^\complement$. \\
-				Then, $d(c, p) > \delta$. \\
-				Choosing $r = d(c, p) - \delta$, clearly $r \in \mathbb{R}^+$. \\
-				Suppose $x \in B_{r}(c)$. \\
+				Define $S = \bar{B}_{\delta}(p)$ as some closed ball in $(M, d)$.\\
+				Let $c \in S^\complement$.\\
+				Then, $d(c, p) > \delta$.\\
+				Choosing $r = d(c, p) - \delta$, clearly $r \in \mathbb{R}^+$.\\
+				Suppose $x \in B_{r}(c)$.\\
 				$\Rightarrow d(x, c) < r.$ \\
 				$\Rightarrow d(x, c) < d(c, p) - \delta.$ \\
 				$\Rightarrow d(c, p) - d(x, c) > \delta.$ \\
@@ -484,7 +475,7 @@
 				$\Rightarrow d(x, p) > \delta.$ \\
 				$\Rightarrow x \in S^\complement.$ \\
 				$\Rightarrow B_{r}(c) \subset S^\complement.$ \\
-				$\Rightarrow S^\complement$ is open in $(M, d)$. \\
+				$\Rightarrow S^\complement$ is open in $(M, d)$.\\
 			\end{proof}
 
 			\begin{theorem}
@@ -493,26 +484,27 @@
 					\item $\varnothing$ is closed
 					\item M is closed
 					\item The intersection of an arbitrary number of closed subsets is closed: \\
-					$\{V_{k}\}_{k \in \mathbb{N}}$ closed in M $\Rightarrow \bigcap_{k \in \mathbb{N}} V_{k}$ closed in M. 
+					$\{V_{k}\}_{k \in \mathbb{N}}$ closed in $(M, d)$ $\Rightarrow \bigcap_{k \in \mathbb{N}} V_{k}$ closed in $(M, d)$ 
 					\item The union of a finite number of closed subsets is closed: \\
-					$\{V_{k}\}_{k=1}^{n}$ closed in M $\Rightarrow \bigcup_{k=1}^{n} V_{k}$ closed in M.
+					$\{V_{k}\}_{k=1}^{n}$ closed in $(M, d)$ $\Rightarrow \bigcup_{k=1}^{n} V_{k}$ closed in $(M, d)$
 				\end{enumerate}
 			\end{theorem}
+			
 			\begin{proof} 
 				Let $(M, d)$ be a metric space:
 				\begin{enumerate}
 					\item $\varnothing^\complement = M \Rightarrow \varnothing^\complement$ open $\Rightarrow\varnothing$ closed.
 					\item $M^\complement = \varnothing \Rightarrow M^\complement$ open $\Rightarrow M$ closed.
-					\item Suppose $\{V_{k}\}_{k \in \mathbb{N}}$ arbitrary collection of closed subsets in M. \\
-					$\Rightarrow \{V_{k}^\complement\}_{k \in \mathbb{N}}$ is an abitrary collection of open subsets in M. \\
-					$\Rightarrow \bigcup_{k \in \mathbb{N}} V_{k}^\complement$ is open in M. \\
-					$\Rightarrow (\bigcap_{k \in \mathbb{N}} V_{k})^\complement$ is open in M. \\
-					$\Rightarrow \bigcap_{k \in \mathbb{N}} V_{k}$ is closed in M. \\
-					\item Suppose $\{V_{k}\}_{k=1}^{n}$ finite collection of closed subsets in M. \\
-					$\Rightarrow \{V_{k}^\complement\}_{k=1}^{n}$ is a finite collection of open subsets in M. \\
-					$\Rightarrow \bigcap_{k=1}^{n} V_{k}^\complement$ is open in M. \\
-					$\Rightarrow (\bigcup_{k=1}^{n} V_{k})^\complement$ is open in M. \\
-					$\Rightarrow \bigcup_{k=1}^{n} V_{k}$ is closed in M. \\				
+					\item Suppose $\{V_{k}\}_{k \in \mathbb{N}}$ arbitrary collection of closed subsets in $(M, d)$\\
+					$\Rightarrow \{V_{k}^\complement\}_{k \in \mathbb{N}}$ is an abitrary collection of open subsets in $(M, d)$\\
+					$\Rightarrow \bigcup_{k \in \mathbb{N}} V_{k}^\complement$ is open in $(M, d)$\\
+					$\Rightarrow (\bigcap_{k \in \mathbb{N}} V_{k})^\complement$ is open in $(M, d)$\\
+					$\Rightarrow \bigcap_{k \in \mathbb{N}} V_{k}$ is closed in $(M, d)$
+					\item Suppose $\{V_{k}\}_{k=1}^{n}$ finite collection of closed subsets in $(M, d)$\\
+					$\Rightarrow \{V_{k}^\complement\}_{k=1}^{n}$ is a finite collection of open subsets in $(M, d)$\\
+					$\Rightarrow \bigcap_{k=1}^{n} V_{k}^\complement$ is open in $(M, d)$\\
+					$\Rightarrow (\bigcup_{k=1}^{n} V_{k})^\complement$ is open in $(M, d)$\\
+					$\Rightarrow \bigcup_{k=1}^{n} V_{k}$ is closed in $(M, d)$
 				\end{enumerate}
 			\end{proof}
 
@@ -520,11 +512,11 @@
 				Any singleton set is closed.
 			\end{theorem}
 			\begin{proof}
-				Define $S = \{p\}$ as the singleton set $\forall p \in (M, d)$. \\
-				Let $c \in S^\complement = M / \{p\}$. \\
-				Then, $c \neq p$. \\
-				Choose $r = d(c, p) \Rightarrow r \in \mathbb{R}^+$. \\
-				Suppose $x \in B_{r}(c)$. \\
+				Define $S = \{p\}$ as the singleton set $\forall p \in (M, d)$.\\
+				Let $c \in S^\complement = M / \{p\}$.\\
+				Then, $c \neq p$.\\
+				Choose $r = d(c, p) \Rightarrow r \in \mathbb{R}^+$.\\
+				Suppose $x \in B_{r}(c)$.\\
 				$\Rightarrow d(x, c) < r.$ \\
 				$\Rightarrow d(x, c) < d(c, p).$ \\
 				$\Rightarrow d(c, p) - d(x, c) > 0.$ \\
@@ -541,40 +533,40 @@
 				Any finite subset of a metric space is closed.
 			\end{corollary}
 			\begin{proof}
-				Let $x_1, \ldots, x_n \in M$. \\
-				$\Rightarrow \{x_1\}, \ldots, \{x_n\}$ all closed in $M$. \\
-				$\Rightarrow \{ x_1, \ldots, x_n \} = \bigcup_{k=1}^{n} \{x_k\}$ closed in $M$. \\
+				Let $x_1, \ldots, x_n \in M$.\\
+				$\Rightarrow \{x_1\}, \ldots, \{x_n\}$ all closed in $M$.\\
+				$\Rightarrow \{ x_1, \ldots, x_n \} = \bigcup_{k=1}^{n} \{x_k\}$ closed in $M$.\\
 			\end{proof}
 
 			\begin{theorem}
 				Any sphere in a metric space is closed.
 			\end{theorem}
 			\begin{proof} 
-				Let $c \in (M, d), r \in \mathbb{R}^+$. \\
-				Define $r$-sphere centered at $c$ as $S = \{x \in (M, d): d(x, c) = r \}$. \\
-				Let $V_1 = \bar{B}_{r}(c)$. \\
-				$\Rightarrow V_1$ closed in $(M, d)$. \\
-				Let $V_2 = B_{r}(c)^\complement$. \\
-				$\Rightarrow V_2^\complement = B_{r}(c)$. \\
-				$\Rightarrow V_2^\complement$ open in $(M, d)$. \\
-				$\Rightarrow V_2$ closed in $(M, d)$. \\
-				$\Rightarrow V_1 \cap V_2$ closed in $(M, d)$. \\
-				$\Rightarrow \{x \in (M, d): d(x, c) \leq r \} \cap \{x \in (M, d): d(x, c) \geq r \}$ closed in $(M, d)$. \\
-				$\Rightarrow \{x \in (M, d): d(x, c) = r \}$ closed in $(M, d)$. \\
+				Let $c \in (M, d), r \in \mathbb{R}^+$.\\
+				Define $r$-sphere centered at $c$ as $S = \{x \in (M, d): d(x, c) = r \}$.\\
+				Let $V_1 = \bar{B}_{r}(c)$.\\
+				$\Rightarrow V_1$ closed in $(M, d)$.\\
+				Let $V_2 = B_{r}(c)^\complement$.\\
+				$\Rightarrow V_2^\complement = B_{r}(c)$.\\
+				$\Rightarrow V_2^\complement$ open in $(M, d)$.\\
+				$\Rightarrow V_2$ closed in $(M, d)$.\\
+				$\Rightarrow V_1 \cap V_2$ closed in $(M, d)$.\\
+				$\Rightarrow \{x \in (M, d): d(x, c) \leq r \} \cap \{x \in (M, d): d(x, c) \geq r \}$ closed in $(M, d)$.\\
+				$\Rightarrow \{x \in (M, d): d(x, c) = r \}$ closed in $(M, d)$.\\
 				$\Rightarrow S$ closed in $(M, d)$.
 			\end{proof}
 			\begin{theorem}
 				Any half-interval is neither open nor closed.
 			\end{theorem}
 			\begin{proof} 
-				Let $a, b \in \mathbb{R}, a < b$. \\
-				Define $S = [a, b)$ as a half-interval on $\mathbb{R}$. \\
-				Let $r \in \mathbb{R}^+$. \\
-				$\Rightarrow a - r < a$. \\
-				$\Rightarrow a - r < min(S)$. \\
-				$\Rightarrow a - r \in S^\complement$. \\
-				$\Rightarrow \exists a \in S, \forall r \in \mathbb{R}^{+}: B_{r}(a) = (a - r, a + r) \subset S$. \\
-				$\Rightarrow S$ is not open in $\mathbb{R}$. \\
+				Let $a, b \in \mathbb{R}, a < b$.\\
+				Define $S = [a, b)$ as a half-interval on $\mathbb{R}$.\\
+				Let $r \in \mathbb{R}^+$.\\
+				$\Rightarrow a - r < a$.\\
+				$\Rightarrow a - r < min(S)$.\\
+				$\Rightarrow a - r \in S^\complement$.\\
+				$\Rightarrow \exists a \in S, \forall r \in \mathbb{R}^{+}: B_{r}(a) = (a - r, a + r) \subset S$.\\
+				$\Rightarrow S$ is not open in $\mathbb{R}$.\\
 				$\Rightarrow [b, \infty)$ is not open in $\mathbb{R}$ by same logic.\\
 				$\Rightarrow S^\complement = (-\infty, a) \cup [b, \infty)$ is not open in $\mathbb{R}$ by same logic.\\
 				$\Rightarrow S$ is not closed in $\mathbb{R}$.
@@ -585,21 +577,21 @@
 				$\{ x \in \mathbb{R}^n: x_k < a \}$ and $\{ x \in \mathbb{R}^n: x_k > a \}$ are open in $\mathbb{R}^n$.
 			\end{theorem}
 			\begin{proof} 
-				Let $a \in \mathbb{R}$, and $k \in \{ 1, \ldots, n \}$. \\
-				Define $S = \{ x \in \mathbb{R}^n: x_k < a \}$ and $S' = \{ x \in \mathbb{R}^n: x_k > a \}$. \\
-				Let $c \in S$ and $p \in S'$. \\
-				$\Rightarrow c_k < a$ and $p_k > a$. \\
-				Choose $r = a - c_k$ and $\delta = p_k - a$ $\Rightarrow$ $r, \delta \in \mathbb{R}^+$. \\
-				Suppose $x \in B_{r}(c)$ and $y \in B_{\delta}(p)$. \\
-				$\Rightarrow d(x, c) < r$ and $d(y, p) < \delta$. \\
-				$\Rightarrow d(x, c) < a - c_k$ and $d(y, p) < p_k - a$. \\
-				$\Rightarrow || x - c || < a - c_k$ and $|| y - p || < p_k - a$. \\
-				$\Rightarrow \sqrt{\sum_{k} (x_k - c_k)^2} <  a - c_k$ and $\sqrt{\sum_{k} (y_k - p_k)^2} < p_k - a$. \\
-				$\Rightarrow \sqrt{(x_k - c_k)^2} <  a - c_k$ and $\sqrt{(y_k - p_k)^2} < p_k - a$. \\
-				$\Rightarrow | x_k - c_k | <  a - c_k$ and $| y_k - p_k | <  p_k - a$. \\
-				$\Rightarrow x_k - c_k <  a - c_k$ and $p_k - y_k < p_k - a$. \\
-				$\Rightarrow x_k <  a$ and $y_k >  a$. \\
-				$\Rightarrow x \in S$ and $y \in S'$. \\
+				Let $a \in \mathbb{R}$, and $k \in \{ 1, \ldots, n \}$.\\
+				Define $S = \{ x \in \mathbb{R}^n: x_k < a \}$ and $S' = \{ x \in \mathbb{R}^n: x_k > a \}$.\\
+				Let $c \in S$ and $p \in S'$.\\
+				$\Rightarrow c_k < a$ and $p_k > a$.\\
+				Choose $r = a - c_k$ and $\delta = p_k - a$ $\Rightarrow$ $r, \delta \in \mathbb{R}^+$.\\
+				Suppose $x \in B_{r}(c)$ and $y \in B_{\delta}(p)$.\\
+				$\Rightarrow d(x, c) < r$ and $d(y, p) < \delta$.\\
+				$\Rightarrow d(x, c) < a - c_k$ and $d(y, p) < p_k - a$.\\
+				$\Rightarrow || x - c || < a - c_k$ and $|| y - p || < p_k - a$.\\
+				$\Rightarrow \sqrt{\sum_{k} (x_k - c_k)^2} <  a - c_k$ and $\sqrt{\sum_{k} (y_k - p_k)^2} < p_k - a$.\\
+				$\Rightarrow \sqrt{(x_k - c_k)^2} <  a - c_k$ and $\sqrt{(y_k - p_k)^2} < p_k - a$.\\
+				$\Rightarrow | x_k - c_k | <  a - c_k$ and $| y_k - p_k | <  p_k - a$.\\
+				$\Rightarrow x_k - c_k <  a - c_k$ and $p_k - y_k < p_k - a$.\\
+				$\Rightarrow x_k <  a$ and $y_k >  a$.\\
+				$\Rightarrow x \in S$ and $y \in S'$.\\
 				$\Rightarrow B_{r}(c) \subset S$ and $B_{\delta}(p) \subset S'$.
 			\end{proof}
 
@@ -607,14 +599,15 @@
 				Any subspace of Euclidean space with a weakly bounded component is closed. So, $\forall a \in \mathbb{R}, k \in \{ 1, \ldots, n \}$: 
 				$\{ x \in \mathbb{R}^n: x_k \leq a \}$ and $\{ x \in \mathbb{R}^n: x_k \geq a \}$ are closed in $\mathbb{R}^n$.
 			\end{theorem}
+
 			\begin{proof} 
-				Let $a \in \mathbb{R}$, and $k \in \{ 1, \ldots, n \}$. \\
-				Define $S = \{ x \in \mathbb{R}^n: x_k \leq a \}$ and $S' = \{ x \in \mathbb{R}^n: x_k \geq a \}$. \\
-				$\Rightarrow S^\complement = \{ x \in \mathbb{R}^n: x_k > a \}$ and $S'^\complement = \{ x \in \mathbb{R}^n: x_k < a \}$. \\
-				$\Rightarrow S^\complement, S'^\complement$ are open in $\mathbb{R}^n$. \\
+				Let $a \in \mathbb{R}$, and $k \in \{ 1, \ldots, n \}$.\\
+				Define $S = \{ x \in \mathbb{R}^n: x_k \leq a \}$ and $S' = \{ x \in \mathbb{R}^n: x_k \geq a \}$.\\
+				$\Rightarrow S^\complement = \{ x \in \mathbb{R}^n: x_k > a \}$ and $S'^\complement = \{ x \in \mathbb{R}^n: x_k < a \}$.\\
+				$\Rightarrow S^\complement, S'^\complement$ are open in $\mathbb{R}^n$.\\
 				$\Rightarrow S, S'$ are closed in  $\mathbb{R}^n$.
 			\end{proof}
-
+			
 			\begin{definition}[Open/Closed Intervals in $\mathbb{R}^n$]
 				\label{open closed intervals}
 				Let $a_1, \ldots, a_n, b_1, \ldots b_n \in \mathbb{R}$.
@@ -627,15 +620,15 @@
 			\begin{theorem}
 				Any open/closed interval in Euclidean space is open/closed set.
 			\end{theorem}
+			
 			\begin{proof} 
-				Define $S = \{ x \in \mathbb{R}^n: a_k < x_k < b_k, k = 1, \ldots, n \}$. \\
-				$\Rightarrow S = \bigcap_{k=1}^{n} \{ x \in \mathbb{R}^n: a_k < x_k < b_k \}$. \\
-				$\Rightarrow S = (\bigcap_{k=1}^{n} \{ x \in \mathbb{R}^n: x_k > a_k \}) \cap (\bigcap_{k=1}^{n} \{ x \in \mathbb{R}^n: x_k < b_k \})$. \\
-				$\Rightarrow S$ is open, since it is the finite intersection of ($2n$) open sets. \\
-
-				Define $S' = \{ x \in \mathbb{R}^n: a_k \leq x_k \leq b_k, k = 1, \ldots, n \}$. \\
-				$\Rightarrow S' = \bigcap_{k=1}^{n} \{ x \in \mathbb{R}^n: a_k \leq x_k \leq b_k \}$. \\
-				$\Rightarrow S' = (\bigcap_{k=1}^{n} \{ x \in \mathbb{R}^n: x_k \geq a_k \}) \cap (\bigcap_{k=1}^{n} \{ x \in \mathbb{R}^n: x_k \leq b_k \})$. \\
+				Let $S = \{ x \in \mathbb{R}^n: a_k < x_k < b_k, k = 1, \ldots, n \}$\\
+				$\Rightarrow S = \bigcap_{k=1}^{n} \{ x \in \mathbb{R}^n: a_k < x_k < b_k \}$.\\
+				$\Rightarrow S = (\bigcap_{k=1}^{n} \{ x \in \mathbb{R}^n: x_k > a_k \}) \cap (\bigcap_{k=1}^{n} \{ x \in \mathbb{R}^n: x_k < b_k \})$.\\
+				$\Rightarrow S$ is open, since it is the finite intersection of ($2n$) open sets.\\
+				Define $S' = \{ x \in \mathbb{R}^n: a_k \leq x_k \leq b_k, k = 1, \ldots, n \}$.\\
+				$\Rightarrow S' = \bigcap_{k=1}^{n} \{ x \in \mathbb{R}^n: a_k \leq x_k \leq b_k \}$.\\
+				$\Rightarrow S' = (\bigcap_{k=1}^{n} \{ x \in \mathbb{R}^n: x_k \geq a_k \}) \cap (\bigcap_{k=1}^{n} \{ x \in \mathbb{R}^n: x_k \leq b_k \})$.\\
 				$\Rightarrow S'$ is closed, since it is the finite intersection of ($2n$) closed sets.
 			\end{proof}
 
@@ -647,36 +640,35 @@
 			\begin{theorem}
 				Any open/closed interval in Euclidean space is bounded.
 			\end{theorem}
-			\begin{proof} 
-				Let $a, b \in \mathbb{R}^n$ s.t. $a \neq b$. \\
-				Define $S = \{ x \in \mathbb{R}^n: a_k \leq x_k \leq b_k, k = 1, \ldots, n \}$. \\
-				Choose $r = d(b, a) > 0$. \\
-				Let $x \in S$. \\
-				$\Rightarrow 0 \leq x_k - a_k \leq b_k - a_k$. \\
-				$\Rightarrow (x_k - a_k)^2 \leq (b_k - a_k)^2$. \\
-				$\Rightarrow \sum \limits_{k=1}^n (x_k - a_k)^2 \leq \sum \limits_{k=1}^n (b_k - a_k)^2$. \\
-				$\Rightarrow \sqrt{\sum \limits_{k=1}^n (x_k - a_k)^2} \leq \sqrt{\sum \limits_{k=1}^n (b_k - a_k)^2}$. \\
-				$\Rightarrow ||x - a|| \leq ||b - a||$. \\
-				$\Rightarrow d(x, a) \leq d(b, a)$. \\
-				$\Rightarrow d(x, a) \leq r$. \\
-				$\Rightarrow x \in \bar{B}_r(a)$. \\
-				$\Rightarrow S \subset \bar{B}_r(a)$. \\
-
-				Define $S' = \{ x \in \mathbb{R}^n: a_k < x_k < b_k, k = 1, \ldots, n \}$. \\
-				$\Rightarrow S' \subset S$. \\
-				$\Rightarrow S' \subset \bar{B}_r(a)$.
+			\begin{proof}
+				Let $a, b \in \mathbb{R}^n$ s.t. $a \neq b$\\
+				Define $S = \{ x \in \mathbb{R}^n: a_k \leq x_k \leq b_k, k = 1, \ldots, n \}$\\
+				Choose $r = d(b, a) > 0$\\
+				Let $x \in S$\\
+				$\Rightarrow 0 \leq x_k - a_k \leq b_k - a_k$\\
+				$\Rightarrow (x_k - a_k)^2 \leq (b_k - a_k)^2$\\
+				$\Rightarrow \sum \limits_{k=1}^n (x_k - a_k)^2 \leq \sum \limits_{k=1}^n (b_k - a_k)^2$\\
+				$\Rightarrow \sqrt{\sum \limits_{k=1}^n (x_k - a_k)^2} \leq \sqrt{\sum \limits_{k=1}^n (b_k - a_k)^2}$\\
+				$\Rightarrow ||x - a|| \leq ||b - a||$\\
+				$\Rightarrow d(x, a) \leq d(b, a)$\\
+				$\Rightarrow d(x, a) \leq r$\\
+				$\Rightarrow x \in \bar{B}_r(a)$\\
+				$\Rightarrow S \subset \bar{B}_r(a)$\\
+				Let $S' = \{ x \in \mathbb{R}^n: a_k < x_k < b_k, k = 1, \ldots, n \}$\\
+				$\Rightarrow S' \subset S$\\
+				$\Rightarrow S' \subset \bar{B}_r(a)$
 			\end{proof}
 
 			\begin{theorem}
 				The union of a finite collection of bounded subsets of a metric space is bounded.
 			\end{theorem}
 			\begin{proof}
-				Suppose $V_1, \ldots, V_n$ are bounded subsets in $M$. \\
-				Let $c_1 \in V_1, \ldots, c_n \in V_n$. \\
-				$\Rightarrow \exists r_1, \ldots, r_n \in \mathbb{R}^+$ s.t. $V_{k} \subset \bar{B}_{r_k}(c_k), \forall k = 1, \ldots, n$. \\
-				Let $x \in \bigcup_{k=1}^{n} V_k$. \\
-				$\Rightarrow x \in V_k$ for some $k = 1, \ldots, n$. \\
-				$\Rightarrow x \in \bar{B}_{r_k}(c_k)$. \\
+				Suppose $V_1, \ldots, V_n$ are bounded subsets in $M$.\\
+				Let $c_1 \in V_1, \ldots, c_n \in V_n$.\\
+				$\Rightarrow \exists r_1, \ldots, r_n \in \mathbb{R}^+$ s.t. $V_{k} \subset \bar{B}_{r_k}(c_k), \forall k = 1, \ldots, n$.\\
+				Let $x \in \bigcup_{k=1}^{n} V_k$.\\
+				$\Rightarrow x \in V_k$ for some $k = 1, \ldots, n$.\\
+				$\Rightarrow x \in \bar{B}_{r_k}(c_k)$.\\
 				$\Rightarrow \bigcup_{k=1}^{n} V_k \subset  \bar{B}_{r_k}(c_k)$.
 			\end{proof}
 
@@ -685,13 +677,13 @@
 				and if it is bounded from below has a least element.
 			\end{theorem}
 			\begin{proof}
-				Let $S \subset \mathbb{R}, S \neq \varnothing$. \\
-				Suppose S is closed in $\mathbb{R}$ and bounded above. \\
-				Let $c = sup(S)$. \\
-				With an eye to contradict, assume $c \in S^\complement$. \\
-				Since $S^\complement$ open in $\mathbb{R}$, $\exists r \in \mathbb{R}^+$ s.t. $(c-r, c+r) \subset S^\complement$. \\
-				Then no element in S is greater than $c - r$. \\
-				$\Rightarrow c - r$ is an upper bound for $S$. \\
+				Let $S \subset \mathbb{R}, S \neq \varnothing$.\\
+				Suppose S is closed in $\mathbb{R}$ and bounded above.\\
+				Let $c = sup(S)$.\\
+				With an eye to contradict, assume $c \in S^\complement$.\\
+				Since $S^\complement$ open in $\mathbb{R}$, $\exists r \in \mathbb{R}^+$ s.t. $(c-r, c+r) \subset S^\complement$.\\
+				Then no element in S is greater than $c - r$.\\
+				$\Rightarrow c - r$ is an upper bound for $S$.\\
 				This must be a contradictions, so $c \in S$.
 			\end{proof}
 
