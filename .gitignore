@@ -5,3 +5,4 @@
 *.gz
 *.toc
 *.code-workspace
+.DS_Store
